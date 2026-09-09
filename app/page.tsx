@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { TOPICS } from '@/data/topics';
 import { Deck, Flashcard, SortDirection } from '@/types/flashcard';
 import { Header } from '@/components/Header';
+import { TopicTabs } from '@/components/TopicTabs';
 import { PileZone } from '@/components/PileZone';
 import { FlashcardStage } from '@/components/FlashcardStage';
 import { Controls } from '@/components/Controls';
@@ -212,7 +213,7 @@ export default function FlashcardApp() {
       <div className="fixed top-1/4 -right-28 w-96 h-96 rounded-full bg-rose-500/20 blur-[140px] pointer-events-none -z-10" />
 
       {/* Main Container */}
-      <div className="w-full max-w-4xl flex flex-col gap-4 my-auto z-10">
+      <div className="w-full max-w-4xl flex flex-col gap-3 sm:gap-4 my-auto z-10">
         
         {/* Top Header */}
         <Header
@@ -230,6 +231,13 @@ export default function FlashcardApp() {
             }
           }}
           onOpenDeckSwitcher={() => setIsDeckSwitcherOpen(true)}
+        />
+
+        {/* Tabbed Topic Navigation */}
+        <TopicTabs
+          decks={TOPICS}
+          currentDeckId={currentDeck.id}
+          onSelectDeck={handleSelectDeck}
         />
 
         {/* 3-Column Arena (Left Pile - Center Flashcard - Right Pile) */}

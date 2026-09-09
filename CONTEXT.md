@@ -1,88 +1,60 @@
 # Flashcard Spaced Repetition Web App — Project Context
 
 ## 📌 Project Overview
-A web-based spaced repetition flashcard reviewer designed for college students and reviewers. The app allows students to review complex course topics through active recall, simple explanations, and iterative round cycles.
-
-The project is built with **Next.js (App Router, TypeScript, Tailwind CSS)** for easy, 1-click deployment to **Vercel** and seamless sharing via web link.
+A web-based spaced repetition flashcard reviewer built with **Next.js (App Router, TypeScript, Tailwind CSS)** for easy, 1-click deployment to **Vercel**. Designed for active recall, structured exam review, and interactive round loops.
 
 ---
 
-## 🎯 Learning & Card Mechanics
+## 📑 Tabbed Course Topics (84 Total Cards)
 
-### 1. Active Recall Two-Sided Structure
-- **Front Face (Shown FIRST)**:
-  - **Concept / Scenario Clue**: Simple, easy-to-understand explanation of the concept.
-  - **Follow-up Question**: A direct prompt (e.g., *"❓ Anong branch of science / term ito?"*) asking the reviewer to recall the exact term before flipping.
-- **Back Face (Shown on FLIP)**:
-  - **Terminology Name**: Large, bold term (e.g., `Morphology`, `Aristotle`, `Histology`).
-  - **Subtitle / Etymology**: Origin breakdown (e.g., `zoon + logos`).
-  - **Key Takeaway**: Bulleted core facts to remember for exams.
+The app features a top **Tabbed Navigation Bar** allowing students to switch between topics seamlessly without clutter or cognitive overload:
 
-### 2. Spaced Repetition Sorting Piles
-- **Left Pile (Mastered)**:
-  - Triggered by clicking **Got it (Correct)**, pressing `←` (or `A`), or swiping **Left**.
-  - Correct cards stay banked in the Mastered pile for the rest of the session.
-- **Right Pile (Needs Review)**:
-  - Triggered by clicking **Study Again (Wrong)**, pressing `→` (or `D`), or swiping **Right**.
-  - Wrong cards are placed into the Review pile.
-
-### 3. Iterative Round Loop
-- Once all cards in a round are tested:
-  - If any cards remain in the Review pile, **Round 2** begins automatically with *only the wrong cards*.
-  - The cycle repeats (Round 3, Round 4, etc.) until **100% Mastery** is achieved.
-- Upon 100% mastery, a **Victory Celebration** with confetti and retention stats is triggered.
-
----
-
-## 📚 Subject Decks
-
-### Topic 1: Introduction to Zoology (32 Cards)
+### 🐾 Topic 1: Introduction to Zoology (32 Cards)
 - **Etymology & Basics**: `Zoology (zoon + logos)`, `Zoology Definition`, `Characteristics of Animals`
-- **Historical Development**: `Aristotle (Ancient Empiricism)`, `Middle Ages (Bestiaries)`, `Renaissance (Comparative Anatomy)`, `Carl Linnaeus (Binomial Nomenclature)`, `Charles Darwin (Natural Selection)`, `Modern Age Zoology`
+- **Historical Development**: `Aristotle (Ancient Empiricism)`, `Middle Ages (Bestiaries)`, `Renaissance (Comparative Anatomy)`, `Carolus Linnaeus (Binomial Nomenclature)`, `Charles Darwin (Natural Selection)`, `Modern Age Zoology`
 - **Structural Zoology**: `Morphology (External form)`, `Anatomy (Internal organs)`, `Histology (Tissues)`, `Cytology (Cells)`
 - **Functional & Behavioral**: `Animal Physiology`, `Homeostasis`, `Embryology`, `Genetics`, `Ethology (Behavior)`, `Ecological Zoology`
 - **Taxonomic Branches**: `Entomology (Insects)`, `Herpetology (Reptiles/Amphibians)`, `Ornithology (Birds)`, `Ichthyology (Fishes)`, `Helminthology (Parasitic worms)`
 - **Medical, Agriculture & Conservation**: `Disease Vectors`, `Zoonotic Diseases`, `Animal Models`, `Biological Control`, `Endemic Species`, `Keystone Species`, `Flagship Species`, `Invasive Species`
 
-*(Topics 2 and 3 can be added by inserting new deck objects into `app/data/topics.ts`)*
+---
+
+### 🌿 Topic 2: Taxonomy, Phylogeny & Cladistics (26 Cards)
+- **Taxonomy Foundations**: `Taxonomy Definition`, `Carolus Linnaeus`, `Binomial Nomenclature (Genus species)`, `Systema Naturae (10th Edition 1758)`
+- **Taxonomic Hierarchy**: `Domain → Kingdom → Phylum → Class → Order → Family → Genus → Species`, `The Three Domains of Life (Bacteria, Archaea, Eukarya)`
+- **Evolutionary History**: `Phylogeny`, `Phylogenetic Tree (Nodes & Branch Points)`, `Charles Darwin's On the Origin of Species (1859)`
+- **Cladistics & Character Analysis**: `Cladistic Analysis (Willi Hennig & Clades)`, `Phylogenetic Principle of Classification`, `Ancestral Traits (Plesiomorphy)`, `Derived Traits (Apomorphy)`, `Shared Derived Traits (Synapomorphies)`
+- **Tree Reconstruction**: `Outgroup (Lamprey proxy)`, `Character Matrix (Presence + / Absence 0)`, `Vertebrate Trait Milestones (Jaws → Lungs → Gizzard → Fur/Feathers)`, `Unshared Derived Traits (Autapomorphies)`
+- **Evidence & Applications**: `Molecular Sequence Evidence (DNA & Proteins)`, `Forensic DNA Applications`, `Pathogen Outbreak Origin Tracing`, `Phylogenetic Tree as a Hypothesis`
 
 ---
 
-## 🛠️ Technology Stack
-- **Framework**: [Next.js 14/15](https://nextjs.org/) (App Router, React, TypeScript)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) with custom dark palette & 3D CSS transforms
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Audio Feedback**: Web Audio API (Offline procedural tone synthesizer)
-- **Celebration FX**: `canvas-confetti`
-- **Deployment Platform**: [Vercel](https://vercel.com/) (Zero-configuration hosting)
+### 🔬 Topic 3: Cell Structure and Function (26 Cards)
+- **Prokaryotes vs Eukaryotes**: `Prokaryotic Cells`, `Three Shapes of Bacteria (Bacillus, Coccus, Spirilla)`, `Domain Archaea (Halophiles, Thermophiles, Methanogens)`, `Eukaryotic Cells (Domain Eukarya)`
+- **Plasma Membrane & Transport**: `Phospholipid Bilayer`, `Selectively Permeable Barrier`, `Intercellular Communication (Receptors)`, `Loss of Membrane Barrier & Homeostasis`
+- **Cytoplasm & Matrix**: `Cytoplasm (Cytosol Matrix)`, `The Eukaryotic Animal Cell as Fundamental Unit`
+- **The Genetic Core**: `Nucleus (Double Membrane & DNA Blueprint)`, `Nucleolus (rRNA & Ribosome Assembly)`, `Central Dogma (DNA → RNA → Protein)`
+- **Energy & Powerhouse**: `Mitochondria (Aerobic Respiration: C6H12O6 + 6O2 → 6CO2 + 6H2O + ATP)`
+- **The Endomembrane System**: `Rough ER (Ribosome-studded, Protein folding & Glycoproteins)`, `Smooth ER (Lipids, Detoxification, Ca2+ Storage)`, `Golgi Apparatus (Flattened Saccules, Cis to Trans Face, Exocytosis)`, `Secretory Pathway Flow`
+- **Digestive & Storage Vesicles**: `Lysosomes (Intracellular Acid Hydrolytic Digestion)`, `Peroxisomes (Fatty Acid Oxidation & Detox)`, `Vacuoles & Vesicles`
+- **Non-Membrane Organelles & Cytoskeleton**: `Ribosomes (Polypeptide Assembly)`, `Centrioles (Cytoskeleton Anchor & Mitosis)`, `The Cytoskeleton (Shape, Organization, Movement)`, `Cilia, Flagella, and Microvilli`
 
 ---
 
-## 🚀 How to Run Locally & Deploy to Vercel
+## 🎯 Learning Mechanics
+1. **Front Face (Clue First)**: Simple concept clue + follow-up recall prompt (`❓ Anong branch / organelle / term ito?`).
+2. **Back Face (Flip)**: Terminology name, etymology, and key exam takeaway bullets.
+3. **Left Pile (`Mastered`)**: Correct answers stay banked in mastery.
+4. **Right Pile (`Needs Review`)**: Wrong answers queue for repeat testing.
+5. **Round Loop**: Subsequent rounds repeat *only* the review cards until **100% Mastery** is achieved.
+6. **Victory Modal**: Confetti celebration and retention statistics upon 100% mastery.
 
-### Local Development:
+---
+
+## 🚀 Vercel Deployment Guide
 ```bash
-# 1. Install dependencies
-npm install
-
-# 2. Run the development server
-npm run dev
-
-# 3. Open browser at:
-http://localhost:3000
+git add .
+git commit -m "feat: complete tabbed flashcard app with 3 full Zoology decks (84 cards)"
+git push origin main
 ```
-
-### Vercel Deployment (1-Click):
-1. Push this folder to a GitHub repository:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit of Spaced Repetition Flashcard App"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/flashcard-app.git
-   git push -u origin main
-   ```
-2. Go to [Vercel](https://vercel.com/new) and click **"Add New Project"**.
-3. Import your GitHub repository.
-4. Keep the default settings (Framework: **Next.js**) and click **"Deploy"**.
-5. Vercel will give you a live shareable URL (e.g., `https://flashcard-app.vercel.app`) to send to your friend!
+Deploy instantly on [Vercel](https://vercel.com/new).

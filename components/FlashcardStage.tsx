@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Flashcard, SortDirection } from '@/types/flashcard';
-import { HelpCircle, Sparkles } from 'lucide-react';
+import { HelpCircle, Sparkles, MapPin, CheckCircle2 } from 'lucide-react';
 
 interface FlashcardStageProps {
   card: Flashcard | null;
@@ -86,7 +86,6 @@ export const FlashcardStage: React.FC<FlashcardStageProps> = ({
   const rotateZ = dragX * 0.05;
   const flipRotation = isFlipped ? 180 : 0;
   
-  // Dynamic inline transform during dragging
   const dragTransform = isDragging
     ? `translateX(${dragX}px) rotateY(${flipRotation}deg) rotateZ(${rotateZ}deg)`
     : isFlipped
@@ -110,9 +109,9 @@ export const FlashcardStage: React.FC<FlashcardStageProps> = ({
           } ${sortClass}`}
         >
           {/* ======================================================== */}
-          {/* FRONT FACE (Shown FIRST: Concept Clue & Question)       */}
+          {/* FRONT FACE (Shown FIRST: Situational Scenario & Question) */}
           {/* ======================================================== */}
-          <div className="absolute inset-0 w-full h-full backface-hidden preserve-3d rounded-3xl border border-white/12 shadow-[0_20px_50px_rgba(0,0,0,0.55),inset_0_1px_1px_rgba(255,255,255,0.15)] bg-[linear-gradient(145deg,#1e2846_0%,#131b31_100%)] p-4 sm:p-7 flex flex-col justify-between overflow-hidden z-2">
+          <div className="absolute inset-0 w-full h-full backface-hidden preserve-3d rounded-3xl border border-white/12 shadow-[0_20px_50px_rgba(0,0,0,0.55),inset_0_1px_1px_rgba(255,255,255,0.15)] bg-[linear-gradient(145deg,#1e2846_0%,#131b31_100%)] p-4 sm:p-6 flex flex-col justify-between overflow-hidden z-2">
             
             {/* Header Category Badge */}
             <div className="flex justify-center items-center">
@@ -122,25 +121,32 @@ export const FlashcardStage: React.FC<FlashcardStageProps> = ({
               </span>
             </div>
 
-            {/* Scrollable Content: Analogy & Clue */}
-            <div className="flex-1 flex flex-col justify-center gap-2.5 sm:gap-3.5 my-2 overflow-y-auto pr-1">
+            {/* Content: Situational Scenario & Question */}
+            <div className="flex-1 flex flex-col justify-center gap-2.5 sm:gap-3 my-1.5 overflow-y-auto pr-1">
               
-              {/* Analogy Clue Box */}
-              <div className="bg-indigo-950/40 border border-indigo-500/25 rounded-2xl p-3 sm:p-4.5 shadow-sm">
-                <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
-                  <span className="text-base sm:text-xl">{card.emoji}</span>
+              {/* Situational Scenario Box */}
+              <div className="bg-indigo-950/40 border border-indigo-500/25 rounded-2xl p-3.5 sm:p-4 shadow-sm">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <MapPin className="w-4 h-4 text-indigo-400 shrink-0" />
                   <span className="font-mono text-[0.68rem] sm:text-xs font-bold text-indigo-300 tracking-wider uppercase">
-                    CONCEPT CLUE
+                    SITUATIONAL SCENARIO
                   </span>
+                  <span className="ml-auto text-base sm:text-lg">{card.emoji}</span>
                 </div>
-                <div
-                  className="text-xs sm:text-[0.95rem] text-slate-200 leading-relaxed font-normal"
-                  dangerouslySetInnerHTML={{ __html: card.analogy }}
-                />
+                <p className="text-xs sm:text-[0.92rem] text-slate-100 leading-relaxed font-normal">
+                  {card.situational}
+                </p>
               </div>
 
-              {/* Follow-up Question Box */}
-              <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2.5 sm:p-3.5 flex items-center gap-2.5">
+              {/* Guiding / Main Question (if present) */}
+              {card.mainQuestion && (
+                <div className="bg-slate-900/60 border-l-2 border-indigo-400 pl-3 py-1.5 text-xs sm:text-sm italic text-indigo-200">
+                  &ldquo;{card.mainQuestion}&rdquo;
+                </div>
+              )}
+
+              {/* Follow-up Question Prompt */}
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5">
                 <HelpCircle className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" />
                 <p className="text-xs sm:text-sm font-semibold text-amber-200 leading-snug">
                   {card.prompt}
@@ -156,36 +162,56 @@ export const FlashcardStage: React.FC<FlashcardStageProps> = ({
           </div>
 
           {/* ======================================================== */}
-          {/* BACK FACE (Shown on FLIP: Terminology & Takeaways)      */}
+          {/* BACK FACE (Shown on FLIP: Terminology & Core Scope)      */}
           {/* ======================================================== */}
-          <div className="absolute inset-0 w-full h-full backface-hidden preserve-3d rotate-y-180 rounded-3xl border border-white/12 shadow-[0_20px_50px_rgba(0,0,0,0.55),inset_0_1px_1px_rgba(255,255,255,0.15)] bg-[linear-gradient(145deg,#192440_0%,#0f182c_100%)] p-4 sm:p-7 flex flex-col justify-between overflow-hidden z-1">
+          <div className="absolute inset-0 w-full h-full backface-hidden preserve-3d rotate-y-180 rounded-3xl border border-white/12 shadow-[0_20px_50px_rgba(0,0,0,0.55),inset_0_1px_1px_rgba(255,255,255,0.15)] bg-[linear-gradient(145deg,#192440_0%,#0f182c_100%)] p-4 sm:p-6 flex flex-col justify-between overflow-hidden z-1">
             
             {/* Header Category Badge */}
             <div className="flex justify-center items-center">
-              <span className="font-mono text-[0.68rem] sm:text-xs font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-3.5 py-1 rounded-full">
+              <span className="font-mono text-[0.68rem] sm:text-xs font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-3.5 py-1 rounded-full flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                 TERMINOLOGY / ANSWER
               </span>
             </div>
 
             {/* Answer Content */}
-            <div className="flex-1 flex flex-col items-center justify-center text-center gap-2.5 sm:gap-3.5 my-2 overflow-y-auto px-1 sm:px-2">
-              <div>
-                <h2 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+            <div className="flex-1 flex flex-col justify-center text-left gap-2 sm:gap-2.5 my-1.5 overflow-y-auto pr-1">
+              
+              {/* Title and Subtitle */}
+              <div className="text-center sm:text-left">
+                <h2 className="text-lg sm:text-2xl font-extrabold text-white tracking-tight leading-tight">
                   {card.term}
                 </h2>
                 {card.subtitle && (
-                  <p className="text-xs sm:text-sm text-indigo-300 font-medium mt-1">
+                  <p className="text-xs sm:text-sm text-indigo-300 font-medium mt-0.5">
                     {card.subtitle}
                   </p>
                 )}
               </div>
 
+              {/* Studies / Key Points List */}
+              {card.studies && card.studies.length > 0 && (
+                <div className="bg-slate-900/50 border border-white/10 rounded-xl p-2.5 sm:p-3">
+                  <span className="font-mono text-[0.65rem] sm:text-xs font-bold text-slate-400 block mb-1 uppercase tracking-wider">
+                    Key Topics &amp; Scope:
+                  </span>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1 text-[0.75rem] sm:text-xs text-slate-200">
+                    {card.studies.map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                        <span className="line-clamp-1">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {/* Takeaway Box */}
-              <div className="bg-emerald-950/40 border border-emerald-500/25 rounded-2xl p-3 sm:p-4 text-left w-full shadow-sm">
-                <span className="font-mono text-[0.68rem] sm:text-xs font-bold text-emerald-400 block mb-1">
-                  📌 KEY TAKEAWAYS:
+              <div className="bg-emerald-950/40 border border-emerald-500/25 rounded-xl p-2.5 sm:p-3 text-left w-full shadow-sm">
+                <span className="font-mono text-[0.65rem] sm:text-xs font-bold text-emerald-400 block mb-0.5">
+                  📌 KEY TAKEAWAY:
                 </span>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+                <p className="text-xs sm:text-[0.88rem] text-slate-200 leading-relaxed font-normal">
                   {card.takeaway}
                 </p>
               </div>
