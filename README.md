@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Smart Flashcards — Spaced Repetition Reviewer
 
-## Getting Started
+A modern, mobile-friendly **Next.js (App Router + TypeScript + Tailwind CSS)** flashcard web app built for active recall, spaced repetition, and college exam review.
 
-First, run the development server:
+---
+
+## ✨ Key Features
+
+- 🔄 **Active Recall Two-Sided Flow**:
+  - **Front Face (First)**: Simple concept clue + follow-up question (e.g., *"Anong branch of science / term ito?"*).
+  - **Back Face (Flip)**: Terminology name, origin/etymology, and key exam takeaways.
+- 🗂️ **Spaced Repetition Sorting**:
+  - **Left Pile (`Mastered`)**: Correct cards stay locked in mastery.
+  - **Right Pile (`Needs Review`)**: Wrong cards are banked for repeat review.
+  - **Round Loop Cycle**: Subsequent rounds repeat *only* the wrong cards until **100% Mastery** is achieved.
+- 🎉 **Victory Celebration**: Multi-burst particle confetti when you achieve 100% retention.
+- 📚 **Multi-Deck Support**:
+  - **Topic 1**: Introduction to Zoology (32 comprehensive cards from lecture slides)
+  - **Topic 2 & 3**: Ready-to-use slots for subsequent lecture decks
+- 🎧 **Offline Audio Feedback**: Synthesizes pleasant sounds using Web Audio API (zero external asset requests).
+- 📱 **Full Keyboard & Gesture Controls**:
+  - `Space` = Flip card
+  - `←` or `A` = Got it (Correct)
+  - `→` or `D` = Study Again (Wrong)
+  - Drag / Touch swipe left & right
+
+---
+
+## 🚀 Running Locally
 
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 3. Open in your browser:
+http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Deploy to Vercel (1-Click Sharing)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push your project to GitHub:
+   ```bash
+   git add .
+   git commit -m "feat: complete Next.js flashcard app with Zoology deck"
+   git push origin main
+   ```
+2. Go to [Vercel](https://vercel.com/new).
+3. Import your GitHub repository.
+4. Click **Deploy**. Vercel will give you a live HTTPS link (e.g. `https://your-flashcard-app.vercel.app`) that you can instantly share with your friend!
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📖 Project Context
+For complete architectural details, study mechanics, and topic schemas, see [`CONTEXT.md`](./CONTEXT.md).
