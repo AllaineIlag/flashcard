@@ -11,9 +11,13 @@ import { Controls } from '@/components/Controls';
 import { RoundModal } from '@/components/RoundModal';
 import { VictoryModal } from '@/components/VictoryModal';
 import { DeckSwitcherModal } from '@/components/DeckSwitcherModal';
+import { ImportDeckModal } from '@/components/ImportDeckModal';
 import { playFlipSound, playCorrectSound, playWrongSound, playFanfareSound } from '@/lib/sound';
 
+const STORAGE_KEY = 'zoology_flashcards_custom_decks';
+
 export default function FlashcardApp() {
+  const [allDecks, setAllDecks] = useState<Deck[]>(TOPICS);
   const [currentDeck, setCurrentDeck] = useState<Deck>(TOPICS[0]);
   const [activeCards, setActiveCards] = useState<Flashcard[]>([...TOPICS[0].cards]);
   const [masteredCards, setMasteredCards] = useState<Flashcard[]>([]);
@@ -30,6 +34,30 @@ export default function FlashcardApp() {
   const [isRoundModalOpen, setIsRoundModalOpen] = useState(false);
   const [isVictoryModalOpen, setIsVictoryModalOpen] = useState(false);
   const [isDeckSwitcherOpen, setIsDeckSwitcherOpen] = useState(false);
+  const [isImportModalOpen, setIsImportModalOpen] = useState(false);
+
+  // Load custom decks from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const customDecks: Deck[] = JSON.parse(saved);
+        if (Array.isArray(customDecks) && customDecks.length > 0) {
+          // Merge custom decks with default TOPICS (avoiding ID conflicts)
+          const merged = [...TOPICS];
+          customDecks.forEach(cd => {
+            const existingIdx = merged.findIndex(d => d.id === cd.id);
+            if (existingIdx >= 0) {
+              merged[existingIdx] = cd;
+            } else {
+              merged.push(cd);
+            }
+          });
+          setAllDecks(merged);
+        }
+      }
+    } catch {}
+  }, []);
 
   // Current Card
   const currentCard = activeCards[currentIndex] || null;
@@ -143,6 +171,35 @@ export default function FlashcardApp() {
     setSortDirection(null);
   };
 
+  // Import New Custom Deck
+  const handleImportDeck = (newDeck: Deck) => {
+    const updatedDecks = [...allDecks];
+    const existingIndex = updatedDecks.findIndex(d => d.id === newDeck.id);
+    if (existingIndex >= 0) {
+      updatedDecks[existingIndex] = newDeck;
+    } else {
+      updatedDecks.push(newDeck);
+    }
+    setAllDecks(updatedDecks);
+
+    // Save only custom decks (not built-in TOPICS) to localStorage
+    const customDecksOnly = updatedDecks.filter(d => !TOPICS.some(t => t.id === d.id));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(customDecksOnly));
+
+    // Immediately switch to the imported deck
+    handleSelectDeck(newDeck);
+  };
+
+  // Reset to original default lecture decks
+  const handleResetDefaults = () => {
+    if (window.confirm('Reset and restore the original 3 lecture topics? Custom decks will be cleared.')) {
+      localStorage.removeItem(STORAGE_KEY);
+      setAllDecks(TOPICS);
+      handleSelectDeck(TOPICS[0]);
+      setIsImportModalOpen(false);
+    }
+  };
+
   // Drag physics feedback
   const handleDragMove = (deltaX: number) => {
     if (deltaX < -50) {
@@ -176,6 +233,10 @@ export default function FlashcardApp() {
         if (e.key === 'Escape') setIsDeckSwitcherOpen(false);
         return;
       }
+      if (isImportModalOpen) {
+        if (e.key === 'Escape') setIsImportModalOpen(false);
+        return;
+      }
 
       if (e.code === 'Space') {
         e.preventDefault();
@@ -199,6 +260,7 @@ export default function FlashcardApp() {
     isVictoryModalOpen,
     isRoundModalOpen,
     isDeckSwitcherOpen,
+    isImportModalOpen,
     handleFlip,
     handleCorrect,
     handleWrong,
@@ -235,9 +297,10 @@ export default function FlashcardApp() {
 
         {/* Tabbed Topic Navigation */}
         <TopicTabs
-          decks={TOPICS}
+          decks={allDecks}
           currentDeckId={currentDeck.id}
           onSelectDeck={handleSelectDeck}
+          onOpenImportModal={() => setIsImportModalOpen(true)}
         />
 
         {/* 3-Column Arena (Left Pile - Center Flashcard - Right Pile) */}
@@ -299,11 +362,20 @@ export default function FlashcardApp() {
 
       <DeckSwitcherModal
         isOpen={isDeckSwitcherOpen}
-        decks={TOPICS}
+        decks={allDecks}
         currentDeckId={currentDeck.id}
         onSelectDeck={handleSelectDeck}
         onClose={() => setIsDeckSwitcherOpen(false)}
       />
+
+      <ImportDeckModal
+        isOpen={isImportModalOpen}
+        onClose={() => setIsImportModalOpen(false)}
+        onImportDeck={handleImportDeck}
+        currentDeck={currentDeck}
+        onResetDefaults={handleResetDefaults}
+      />
     </main>
   );
 }
+
