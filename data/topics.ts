@@ -1,1387 +1,1493 @@
 import { Deck } from '@/types/flashcard';
 
 export const TOPICS: Deck[] = [
-  // =========================================================================
-  // TOPIC 1: INTRODUCTION TO ZOOLOGY
-  // =========================================================================
   {
-    id: 'zoology-1',
-    title: 'Introduction to Zoology',
-    badge: 'Topic 1',
-    description: 'Etymology, history, characteristics of Kingdom Animalia, structural & functional branches, and conservation.',
-    icon: '🐾',
-    cards: [
+    "id": "zoology-1",
+    "title": "Introduction to Zoology",
+    "badge": "Topic 1",
+    "description": "Etymology, history, characteristics of Kingdom Animalia, structural & functional branches, taxonomic divisions, and conservation.",
+    "icon": "🐾",
+    "cards": [
       {
-        id: 1,
-        category: 'ETYMOLOGY & BASICS',
-        emoji: '🐾',
-        situational: 'A student looks up why the zoo where animals live and the science subject they study share the same root words from ancient Greece.',
-        mainQuestion: 'Where does the word Zoology come from?',
-        prompt: 'What are the two Greek root words that form the name of this science?',
-        term: 'Zoology (Etymology)',
-        subtitle: 'Greek: zoon (animal) + logos (to study)',
-        studies: [
-          'Zoon = Animal',
-          'Logos = To study / discourse',
-          'Literal meaning: The study of animals'
-        ],
-        takeaway: 'Zoology literally translates to "the study of animals" and forms a major core branch of biological science.'
+        "id": 1,
+        "category": "ETYMOLOGY & BASICS",
+        "cardType": "history",
+        "emoji": "🐾",
+        "question": "Where does the word Zoology come from? Break down its two Greek root words.",
+        "subtext": "Zoon = animal; Logos = to study",
+        "prompt": "What is the literal translation and language origin of Zoology?",
+        "term": "Zoology (Etymology)",
+        "subtitle": "Greek: zoon (animal) + logos (to study)"
       },
       {
-        id: 2,
-        category: 'DEFINITIONS',
-        emoji: '🔬',
-        situational: 'A university researcher investigates the life cycles, genetic makeup, bodily structures, and behaviors of living animal species across the globe.',
-        mainQuestion: 'What is the scientific discipline dedicated to Kingdom Animalia?',
-        prompt: 'What major branch of biology is concerned with the study of animals?',
-        term: 'Zoology',
-        subtitle: 'The Branch of Biology Concerned with Animals',
-        studies: [
-          'Animal diversity and behavior',
-          'Anatomy and bodily functions',
-          'Evolutionary history and habitats'
-        ],
-        takeaway: 'Zoology encompasses all scientific inquiry into animal life, from single-celled protozoa to complex mammals.'
+        "id": 2,
+        "category": "DEFINITIONS",
+        "cardType": "definition",
+        "emoji": "🔬",
+        "question": "What is the comprehensive branch of biology dedicated to the scientific study of animals, their behavior, physiology, classification, and evolution?",
+        "prompt": "What major branch of biological science is this?",
+        "term": "Zoology",
+        "subtitle": "The Scientific Study of Animals"
       },
       {
-        id: 3,
-        category: 'KINGDOM ANIMALIA',
-        emoji: '🧬',
-        situational: 'A lab technician analyzes a newly discovered organism and observes that it is made of many cells with true nuclei, eats other organisms for food, and can move around.',
-        mainQuestion: 'What fundamental traits define an animal?',
-        prompt: 'What are the universal characteristics shared by members of Kingdom Animalia?',
-        term: 'Characteristics of Animals',
-        subtitle: 'Multicellular, Eukaryotic, Heterotrophic, Motile',
-        studies: [
-          'Multicellular (composed of many cells)',
-          'Eukaryotic (has true nucleus)',
-          'Heterotrophic (feeds on others)',
-          'Motile (capable of movement)',
-          'Differentiated tissues'
-        ],
-        takeaway: 'Animals are multicellular eukaryotic heterotrophs that move and possess specialized organized tissues.'
+        "id": 3,
+        "category": "DEFINITIONS",
+        "cardType": "analogy",
+        "emoji": "🌳",
+        "question": "Imagine biology is a giant tree. One massive trunk studies plants (botany), while this other massive trunk studies everything that moves, eats, and belongs to Kingdom Animalia.",
+        "prompt": "What branch of biological science is this?",
+        "term": "Zoology",
+        "subtitle": "The Animal Trunk of Biological Science"
       },
       {
-        id: 4,
-        category: 'HISTORICAL ZOOLOGY',
-        emoji: '🏛️',
-        situational: 'In ancient Greece, a philosopher groups animals into categories based on whether they live in water or land, how they give birth, and whether they have red blood.',
-        mainQuestion: 'Who was the first early thinker to systematically classify animals using empiricism?',
-        prompt: 'Which ancient Greek philosopher is known as an early pioneer of zoological observation?',
-        term: 'Aristotle (Ancient Period)',
-        subtitle: 'Early Empiricism & Animal Classification',
-        studies: [
-          'Classified by habitat (aquatic vs terrestrial)',
-          'Classified by mode of reproduction',
-          'Classified by presence or absence of red blood'
-        ],
-        takeaway: 'Aristotle used empirical observation to create the first documented systematic classification of animal species.'
+        "id": 4,
+        "category": "DEFINITIONS",
+        "cardType": "situational",
+        "emoji": "🧭",
+        "question": "A scientist travels to the Amazon rainforest to discover new animal species, analyze their DNA, observe their hunting habits, and record their mating calls.",
+        "prompt": "What field of science is this researcher practicing?",
+        "term": "Zoology",
+        "subtitle": "Field and Laboratory Animal Science"
       },
       {
-        id: 5,
-        category: 'HISTORICAL ZOOLOGY',
-        emoji: '📜',
-        situational: 'During this era, scholars relied on religious authority rather than dissection, and animals were recorded in illustrated books filled with moral and symbolic stories.',
-        mainQuestion: 'How was zoological knowledge recorded before modern experimental science?',
-        prompt: 'What historical period relied on symbolic "bestiaries" and religious authority?',
-        term: 'Middle Ages (Bestiaries & Authority)',
-        subtitle: 'Authority-Based Knowledge & Symbolic Animals',
-        studies: [
-          'Knowledge based on authority, not experimentation',
-          'Animals described in symbolic bestiaries',
-          'Limited anatomical study due to religious bans'
-        ],
-        takeaway: 'In the Middle Ages, animal study was guided by traditional texts and moral symbolism rather than anatomical dissection.'
+        "id": 5,
+        "category": "KINGDOM ANIMALIA",
+        "cardType": "definition",
+        "emoji": "🧬",
+        "question": "What are the 4 fundamental, universal characteristics shared by all organisms in Kingdom Animalia?",
+        "subtext": "Multicellular, Eukaryotic, Heterotrophic, Motile",
+        "prompt": "What are these 4 defining animal characteristics?",
+        "term": "Characteristics of Animals",
+        "subtitle": "Multicellular • Eukaryotic • Heterotrophic • Motile"
       },
       {
-        id: 6,
-        category: 'HISTORICAL ZOOLOGY',
-        emoji: '🎨',
-        situational: 'Medical scholars and artists begin performing systematic dissections and publish highly detailed anatomical drawings comparing different species.',
-        mainQuestion: 'When did dissection become scientifically acceptable?',
-        prompt: 'Which historical era led to the development of Comparative Anatomy?',
-        term: 'Renaissance Period',
-        subtitle: 'Rise of Dissection & Comparative Anatomy',
-        studies: [
-          'Dissection becomes scientifically acceptable',
-          'Use of illustrated anatomical texts',
-          'Comparison of body structures across species'
-        ],
-        takeaway: 'The Renaissance revived direct empirical observation and established comparative anatomy through detailed dissection.'
+        "id": 6,
+        "category": "KINGDOM ANIMALIA",
+        "cardType": "analogy",
+        "emoji": "🏭",
+        "question": "Unlike plants that act as solar-powered food factories, animals must go out and search for meals, and are built from millions of advanced, nucleated building blocks working together.",
+        "prompt": "What kingdom of life is described here?",
+        "term": "Kingdom Animalia",
+        "subtitle": "Multicellular Heterotrophic Eukaryotes"
       },
       {
-        id: 7,
-        category: 'HISTORICAL ZOOLOGY',
-        emoji: '🏷️',
-        situational: 'A naturalist creates a standardized two-word Latin naming method (Genus species) to replace chaotic paragraph-long descriptions of species.',
-        mainQuestion: 'Who developed the formal binomial system used today?',
-        prompt: 'Which 18th-century scientist established binomial nomenclature and taxonomic hierarchy?',
-        term: 'Carolus Linnaeus (18th Century)',
-        subtitle: 'Father of Modern Taxonomy & Systematics',
-        studies: [
-          'Binomial nomenclature (Genus species)',
-          'Hierarchical classification (Kingdom to Species)',
-          'Published landmark catalog Systema Naturae'
-        ],
-        takeaway: 'Linnaeus created the universal two-part Latin naming system and hierarchical classification structure still in use today.'
+        "id": 7,
+        "category": "KINGDOM ANIMALIA",
+        "cardType": "situational",
+        "emoji": "🧫",
+        "question": "A lab analyzes an unknown microscopic specimen. It lacks cell walls, consumes organic nutrients for energy, moves with muscle tissues, and is made of nucleated cells.",
+        "prompt": "To which biological kingdom does this specimen belong?",
+        "term": "Kingdom Animalia",
+        "subtitle": "Eukaryotic Organisms with Specialized Tissues"
       },
       {
-        id: 8,
-        category: 'HISTORICAL ZOOLOGY',
-        emoji: '🧭',
-        situational: 'A naturalist observes finches on the Galapagos Islands and explains how advantageous inherited traits help species survive and reproduce over generations.',
-        mainQuestion: 'How do animal populations adapt to changing environments?',
-        prompt: 'Which 19th-century scientist proposed the Theory of Evolution by Natural Selection?',
-        term: 'Charles Darwin (19th Century)',
-        subtitle: 'Evolution by Natural Selection',
-        studies: [
-          'Natural selection explains adaptation',
-          'Beneficial traits become more common over time',
-          'Descent with modification from common ancestors'
-        ],
-        takeaway: 'Darwin established natural selection as the driving mechanism for animal diversity and biological adaptation.'
+        "id": 8,
+        "category": "HISTORICAL ZOOLOGY",
+        "cardType": "history",
+        "emoji": "🏛️",
+        "question": "Who was the ancient Greek philosopher who pioneered early animal classification by observing whether animals lived on land or water and whether they had red blood?",
+        "prompt": "Which ancient thinker is known as an early pioneer of zoological observation?",
+        "term": "Aristotle",
+        "subtitle": "Ancient Greek Pioneer of Animal Classification"
       },
       {
-        id: 9,
-        category: 'HISTORICAL ZOOLOGY',
-        emoji: '💻',
-        situational: 'Modern biologists use DNA sequencers, computational algorithms (bioinformatics), and high-resolution imaging to test evolutionary hypotheses.',
-        mainQuestion: 'What characterizes contemporary zoological research?',
-        prompt: 'What modern approach shifted zoology from descriptive notes to experimental data?',
-        term: 'Modern Age Zoology',
-        subtitle: 'Hypothesis-Driven, Molecular & Bioinformatics',
-        studies: [
-          'Integration of molecular genetics',
-          'Bioinformatics and computational modeling',
-          'Shift from descriptive to hypothesis-driven science'
-        ],
-        takeaway: 'Modern zoology uses molecular genetics, DNA sequencing, and computer bioinformatics to study animal biology.'
+        "id": 9,
+        "category": "HISTORICAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "📦",
+        "question": "Think of him as the world's original ancient wildlife detective who first sorted creatures into neat boxes based on basic traits like living in the sea vs on dry land.",
+        "prompt": "Which ancient Greek philosopher is this?",
+        "term": "Aristotle",
+        "subtitle": "Early Empiricism and Classification"
       },
       {
-        id: 10,
-        category: 'STRUCTURAL ZOOLOGY',
-        emoji: '📐',
-        situational: 'A biologist examines the external shape, wing patterns, horn size, and body coloration of different beetle species.',
-        mainQuestion: 'What subfield studies outward form and external features?',
-        prompt: 'What branch of structural zoology investigates the external form and structure of organisms?',
-        term: 'Morphology',
-        subtitle: 'Study of Form & External Structure',
-        studies: [
-          'External body shapes and dimensions',
-          'Structural adaptations and patterns',
-          'Coloration and physical form features'
-        ],
-        takeaway: 'Morphology focuses on the outward physical form and external structural features of organisms.'
+        "id": 10,
+        "category": "HISTORICAL ZOOLOGY",
+        "cardType": "history",
+        "emoji": "📜",
+        "question": "During this historical period, anatomical dissections were discouraged and animal knowledge was recorded in illustrated books filled with religious myths and moral allegories rather than scientific facts.",
+        "prompt": "What historical period relied on symbolic \"bestiaries\"?",
+        "term": "Middle Ages (Bestiaries)",
+        "subtitle": "Authority-Based and Symbolic Zoology"
       },
       {
-        id: 11,
-        category: 'STRUCTURAL ZOOLOGY',
-        emoji: '🫀',
-        situational: 'A veterinary student dissects a frog in the laboratory to inspect the location and connections of the heart, lungs, stomach, and kidneys.',
-        mainQuestion: 'What subfield studies internal organs and body architecture?',
-        prompt: 'What branch of structural zoology focuses on the internal structure of animals?',
-        term: 'Anatomy',
-        subtitle: 'Study of Internal Structure & Organs',
-        studies: [
-          'Internal organ systems and organization',
-          'Dissection and spatial relationships',
-          'Comparative internal structures'
-        ],
-        takeaway: 'Anatomy investigates the internal physical structure and spatial arrangement of animal organs and organ systems.'
+        "id": 11,
+        "category": "HISTORICAL ZOOLOGY",
+        "cardType": "history",
+        "emoji": "🎨",
+        "question": "During which historical revival did scholars like Andreas Vesalius and Leonardo da Vinci bring back systematic human and animal dissections paired with accurate anatomical drawings?",
+        "prompt": "What historical era revived empirical anatomical dissection?",
+        "term": "Renaissance Period",
+        "subtitle": "Revival of Dissection and Anatomical Observation"
       },
       {
-        id: 12,
-        category: 'STRUCTURAL ZOOLOGY',
-        emoji: '🔬',
-        situational: 'A pathologist prepares a microscopic thin slice of muscle and epithelial layers to examine how cells are grouped together to perform specific functions.',
-        mainQuestion: 'What subfield studies biological tissues under a microscope?',
-        prompt: 'What branch of structural zoology is the microscopic study of animal tissues?',
-        term: 'Histology',
-        subtitle: 'Microscopic Anatomy of Cells & Tissues',
-        studies: [
-          'Tissue architecture (epithelial, connective, muscle, nervous)',
-          'Microscopic cell groupings and matrix',
-          'Tissue-level pathology and diagnostics'
-        ],
-        takeaway: 'Histology is the microscopic examination of animal cells and tissues to understand their organization and function.'
+        "id": 12,
+        "category": "HISTORICAL ZOOLOGY",
+        "cardType": "history",
+        "emoji": "🏷️",
+        "question": "Which 18th-century Swedish naturalist established binomial nomenclature to give every species a standard two-part Latin scientific name (Genus species)?",
+        "prompt": "Who is recognized as the Father of Modern Taxonomy?",
+        "term": "Carolus Linnaeus",
+        "subtitle": "Father of Modern Taxonomy"
       },
       {
-        id: 13,
-        category: 'STRUCTURAL ZOOLOGY',
-        emoji: '🧫',
-        situational: 'A cell biologist studies how mitochondria, nuclei, and plasma membranes work inside a single animal cell under an electron microscope.',
-        mainQuestion: 'What subfield focuses on the structure and function of individual cells?',
-        prompt: 'What branch of structural zoology is the study of cell structure and its functions?',
-        term: 'Cytology (Cell Biology)',
-        subtitle: 'Study of Cell Structure & Functions',
-        studies: [
-          'Cell organelle structure and mechanics',
-          'Cellular division and growth',
-          'Membrane transport and signaling'
-        ],
-        takeaway: 'Cytology investigates the fundamental unit of life: the individual cell and its internal microscopic organelles.'
+        "id": 13,
+        "category": "HISTORICAL ZOOLOGY",
+        "cardType": "history",
+        "emoji": "🐢",
+        "question": "Who proposed the landmark Theory of Evolution by Natural Selection in 1859 after studying finches, tortoises, and fossils across the Galapagos Islands?",
+        "prompt": "Which 19th-century naturalist authored \"On the Origin of Species\"?",
+        "term": "Charles Darwin",
+        "subtitle": "Theory of Evolution by Natural Selection"
       },
       {
-        id: 14,
-        category: 'FUNCTIONAL ZOOLOGY',
-        emoji: '⚡',
-        situational: 'A researcher measures how blood pressure, oxygen transport, nerve impulses, and muscle contractions operate during animal movement.',
-        mainQuestion: 'How do bodily structures function together to sustain life?',
-        prompt: 'What subfield of zoology examines the mechanical, physical, and biochemical processes of living organisms?',
-        term: 'Animal Physiology',
-        subtitle: 'Study of Bodily Functions & Processes',
-        studies: [
-          'Theme of "structure to function"',
-          'Mechanical and biochemical body processes',
-          'Organ system coordination and energy utilization'
-        ],
-        takeaway: 'Physiology examines how bodily parts and biochemical systems function as a whole to keep animals alive.'
+        "id": 14,
+        "category": "HISTORICAL ZOOLOGY",
+        "cardType": "history",
+        "emoji": "💻",
+        "question": "What contemporary era of zoology shifted research from purely descriptive physical notes to DNA sequencing, molecular genetics, and computer bioinformatics?",
+        "prompt": "What modern approach characterizes contemporary zoological research?",
+        "term": "Modern Age Zoology",
+        "subtitle": "Molecular Genetics, DNA Sequencing & Bioinformatics"
       },
       {
-        id: 15,
-        category: 'PHYSIOLOGY CONCEPTS',
-        emoji: '⚖️',
-        situational: 'A camel in the desert and a seal in freezing waters maintain a steady internal body temperature and fluid balance despite drastic weather changes.',
-        mainQuestion: 'How do organisms keep their internal conditions stable?',
-        prompt: 'What is the biological ability of an organism to maintain internal balance despite environmental changes?',
-        term: 'Homeostasis',
-        subtitle: 'Maintenance of Internal Equilibrium',
-        studies: [
-          'Thermoregulation (temperature balance)',
-          'Osmoregulation (fluid & electrolyte balance)',
-          'Negative feedback control systems'
-        ],
-        takeaway: 'Homeostasis is the active regulation of internal physical and chemical variables to maintain optimal living conditions.'
+        "id": 15,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "📐",
+        "question": "What subfield of zoology investigates the external form, shape, dimensions, and outward physical patterns of organisms?",
+        "prompt": "What branch of structural zoology is this?",
+        "term": "Morphology",
+        "subtitle": "Study of External Form and Structure"
       },
       {
-        id: 16,
-        category: 'DEVELOPMENTAL ZOOLOGY',
-        emoji: '🥚',
-        situational: 'A scientist tracks the transformation of a fertilized chicken egg into a blastula, then an embryo, and finally a fully formed chick ready to hatch.',
-        mainQuestion: 'How do organisms develop from fertilization to birth?',
-        prompt: 'What subfield of developmental zoology studies egg fertilization, embryos, and fetuses?',
-        term: 'Embryology',
-        subtitle: 'Study of Embryonic & Fetal Development',
-        studies: [
-          'Fertilization and cleavage',
-          'Germ layer and tissue differentiation',
-          'Morphogenesis and fetal organ formation'
-        ],
-        takeaway: 'Embryology investigates the early developmental stages of organisms from single-celled zygote to fetus.'
+        "id": 16,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "🏎️",
+        "question": "Imagine judging an automobile purely from the outside—measuring the contours, body kit, spoiler, and exterior paint job without opening the hood.",
+        "prompt": "What branch of zoology focuses exclusively on outward form?",
+        "term": "Morphology",
+        "subtitle": "External Physical Architecture"
       },
       {
-        id: 17,
-        category: 'DEVELOPMENTAL ZOOLOGY',
-        emoji: '🧬',
-        situational: 'A dog breeder tracks how coat color, eye color, and hip health are passed down from parent dogs to their puppies through chromosomes and DNA.',
-        mainQuestion: 'How are biological traits passed across generations?',
-        prompt: 'What branch of zoology and biology studies heredity and genetic variations in organisms?',
-        term: 'Genetics',
-        subtitle: 'Study of Heredity & Variations',
-        studies: [
-          'Gene inheritance patterns',
-          'DNA mutations and variations',
-          'Molecular and population genetics'
-        ],
-        takeaway: 'Genetics examines the transmission of hereditary traits and variations from parents to offspring.'
+        "id": 17,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🪲",
+        "question": "An entomologist measures the horn curvature, wing dimensions, and carapace patterns of different beetle species under a magnifying glass.",
+        "prompt": "What branch of zoology is being applied here?",
+        "term": "Morphology",
+        "subtitle": "Outward Form and Physical Adaptation"
       },
       {
-        id: 18,
-        category: 'BEHAVIORAL ZOOLOGY',
-        emoji: '🦅',
-        situational: 'A wildlife biologist sets up camouflaged cameras to record mating dances, territory marking, and hunting techniques of wolves in the wild.',
-        mainQuestion: 'Why do animals behave the way they do in nature?',
-        prompt: 'What is the scientific and objective study of animal behavior under natural conditions?',
-        term: 'Ethology',
-        subtitle: 'Scientific Study of Animal Behavior',
-        studies: [
-          'Instinctive and learned behaviors',
-          'Behavioral ecology (causes & evolution of behavior)',
-          'Animal cognition and communication'
-        ],
-        takeaway: 'Ethology investigates animal behavior in natural environments and interprets it through evolutionary adaptation.'
+        "id": 18,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🫀",
+        "question": "What subfield of zoology is the study of internal physical body structures, organs, and spatial relationships revealed by dissection?",
+        "prompt": "What branch of structural zoology focuses on internal body organization?",
+        "term": "Anatomy",
+        "subtitle": "Study of Internal Structure and Organs"
       },
       {
-        id: 19,
-        category: 'ECOLOGICAL ZOOLOGY',
-        emoji: '🌿',
-        situational: 'A scientist studies how a population of deer affects vegetation and how environmental changes affect the deer.',
-        mainQuestion: 'How does the animal interact with its environment?',
-        prompt: 'What branch of zoology examines the relationships between animals and their surrounding environments?',
-        term: 'Ecological Zoology (Animal Ecology)',
-        subtitle: 'Animal-Environment Interactions & Energy Flow',
-        studies: [
-          'Adaptation and habitat interactions',
-          'Population dynamics and community structure',
-          'Food webs and energy flow'
-        ],
-        takeaway: 'Ecological Zoology studies how animal species interact with, adapt to, and influence their habitats and neighboring species.'
+        "id": 19,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "🔧",
+        "question": "Imagine popping open the car hood to map the exact locations of the engine block, radiator, transmission, hoses, and electrical wiring.",
+        "prompt": "What branch of zoology inspects internal parts and spatial layout?",
+        "term": "Anatomy",
+        "subtitle": "Internal Structural Organization"
       },
       {
-        id: 20,
-        category: 'TAXONOMIC BRANCHES',
-        emoji: '🐜',
-        situational: 'An agricultural researcher identifies a new species of beetle and examines its antenna structure, metamorphosis cycle, and pollination habits.',
-        mainQuestion: 'What specialized field deals exclusively with insects?',
-        prompt: 'What branch of systematic zoology is dedicated to the study of insects?',
-        term: 'Entomology',
-        subtitle: 'Study of Insects',
-        studies: [
-          'Insect anatomy and metamorphosis',
-          'Pest control and pollination biology',
-          'Diversity of six-legged hexapods'
-        ],
-        takeaway: 'Entomology is the scientific study of insects, the most diverse class of animals on Earth.'
+        "id": 20,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🐸",
+        "question": "A veterinary student dissects a preserved frog in the laboratory to inspect where the heart, lungs, stomach, and kidneys connect.",
+        "prompt": "What anatomical discipline is the student practicing?",
+        "term": "Anatomy",
+        "subtitle": "Dissection and Internal Organ Mapping"
       },
       {
-        id: 21,
-        category: 'TAXONOMIC BRANCHES',
-        emoji: '🐍',
-        situational: 'A field zoologist collects data on venomous pit vipers and tree frogs living in a tropical rainforest.',
-        mainQuestion: 'What branch studies both reptiles and amphibians?',
-        prompt: 'What specialized branch of zoology deals with the study of reptiles and amphibians?',
-        term: 'Herpetology',
-        subtitle: 'Study of Reptiles & Amphibians',
-        studies: [
-          'Reptiles (snakes, lizards, turtles, crocodilians)',
-          'Amphibians (frogs, toads, salamanders)',
-          'Ectothermic (cold-blooded) tetrapods'
-        ],
-        takeaway: 'Herpetology focuses on the biology, ecology, and venom chemistry of amphibians and non-avian reptiles.'
+        "id": 21,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🔬",
+        "question": "What subfield of zoology is the microscopic study of animal tissues and their cellular organization?",
+        "prompt": "What branch of structural zoology is this?",
+        "term": "Histology",
+        "subtitle": "Microscopic Study of Animal Tissues"
       },
       {
-        id: 22,
-        category: 'TAXONOMIC BRANCHES',
-        emoji: '🦜',
-        situational: 'A biologist uses GPS satellite tags to track the seasonal migration paths, feather aerodynamics, and nest-building habits of eagles.',
-        mainQuestion: 'What field studies avian species?',
-        prompt: 'What specialized branch of zoology is dedicated to the study of birds?',
-        term: 'Ornithology',
-        subtitle: 'Study of Birds',
-        studies: [
-          'Avian flight mechanics and migration',
-          'Bird songs, communication, and nesting',
-          'Feather anatomy and egg biology'
-        ],
-        takeaway: 'Ornithology is the scientific study of all aspects of bird biology, ecology, and flight mechanics.'
+        "id": 22,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "🧱",
+        "question": "If anatomy looks at a whole brick wall, this science zooms in under a microscope to inspect the mortar and the microscopic layers of bricks.",
+        "prompt": "What branch of microscopic biology is this?",
+        "term": "Histology",
+        "subtitle": "Tissue-Level Architecture"
       },
       {
-        id: 23,
-        category: 'TAXONOMIC BRANCHES',
-        emoji: '🐟',
-        situational: 'A marine biologist catalogues coral reef fish, sharks, and deep-sea anglerfish to analyze their gill adaptations and swimming efficiency.',
-        mainQuestion: 'What field studies fishes?',
-        prompt: 'What specialized branch of zoology is dedicated to the study of fishes?',
-        term: 'Ichthyology',
-        subtitle: 'Study of Fishes',
-        studies: [
-          'Jawless fish (Agnatha)',
-          'Cartilaginous fish (sharks, rays)',
-          'Bony fish (Osteichthyes)'
-        ],
-        takeaway: 'Ichthyology is the branch of zoology devoted to the study of freshwater and marine fish species.'
+        "id": 23,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🧪",
+        "question": "A pathologist prepares an ultra-thin slice of muscle tissue, stains it with hematoxylin and eosin (pink & purple), and examines the cell matrix under a high-power microscope.",
+        "prompt": "What branch of zoology and pathology is this?",
+        "term": "Histology",
+        "subtitle": "Tissue Staining and Microscopic Diagnostics"
       },
       {
-        id: 24,
-        category: 'TAXONOMIC BRANCHES',
-        emoji: '🪱',
-        situational: 'A medical researcher isolates parasitic tapeworms and flukes from livestock intestines to develop effective anti-parasite treatments.',
-        mainQuestion: 'What branch studies parasitic worms?',
-        prompt: 'What specialized branch of zoology deals with the study of parasitic worms?',
-        term: 'Helminthology',
-        subtitle: 'Study of Parasitic Worms (Helminths)',
-        studies: [
-          'Tapeworms (Cestodes)',
-          'Flukes (Trematodes)',
-          'Roundworms (Nematodes)'
-        ],
-        takeaway: 'Helminthology focuses on parasitic worms that infect humans, livestock, and wildlife.'
+        "id": 24,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🧫",
+        "question": "What branch of structural zoology studies the structure, internal organelles, and biochemical functions of individual cells?",
+        "prompt": "What branch of cell biology is this?",
+        "term": "Cytology (Cell Biology)",
+        "subtitle": "Study of Individual Cells and Organelles"
       },
       {
-        id: 25,
-        category: 'MEDICAL ZOOLOGY',
-        emoji: '🦟',
-        situational: 'An *Aedes aegypti* mosquito bites an infected human and transmits dengue virus to another person without becoming sick itself.',
-        mainQuestion: 'What do we call an animal that transmits pathogens between hosts?',
-        prompt: 'What medical zoology term describes an organism that carries and transmits infectious diseases to others?',
-        term: 'Disease Vector',
-        subtitle: 'Carrier & Transmitter of Pathogens',
-        studies: [
-          'Transmits pathogens between hosts without being harmed',
-          'Mosquitoes ➔ Dengue, Malaria, Zika',
-          'Fleas ➔ Plague; Ticks ➔ Lyme disease'
-        ],
-        takeaway: 'A disease vector is an organism (commonly an arthropod) that spreads infectious pathogens between living hosts.'
+        "id": 25,
+        "category": "STRUCTURAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "🏠",
+        "question": "Studying the individual rooms, wiring, plumbing, and smart appliances inside a single apartment that makes up a massive skyscraper.",
+        "prompt": "What branch of biology focuses on the individual cell unit?",
+        "term": "Cytology (Cell Biology)",
+        "subtitle": "The Fundamental Unit of Life"
       },
       {
-        id: 26,
-        category: 'MEDICAL ZOOLOGY',
-        emoji: '🦇',
-        situational: 'Rabies virus from a bat bite or bird flu from poultry naturally crosses over and infects human patients.',
-        mainQuestion: 'What do we call diseases transmitted from animals to humans?',
-        prompt: 'What is the term for infectious diseases naturally transmitted between animals and humans?',
-        term: 'Zoonotic Diseases (Zoonoses)',
-        subtitle: 'Infections Transmitted from Animals to Humans',
-        studies: [
-          'Animal-to-human disease transmission',
-          'Examples: Rabies, COVID-19, Avian Flu',
-          'Monitored closely by public health epidemiologists'
-        ],
-        takeaway: 'Zoonoses are infectious diseases that naturally jump from animal reservoir populations to human hosts.'
+        "id": 26,
+        "category": "FUNCTIONAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "⚡",
+        "question": "What subfield of zoology investigates the mechanical, physical, and biochemical functions and processes of living animal bodies?",
+        "prompt": "What subfield of zoology examines how bodily systems function?",
+        "term": "Animal Physiology",
+        "subtitle": "Study of Bodily Functions and Processes"
       },
       {
-        id: 27,
-        category: 'MEDICAL ZOOLOGY',
-        emoji: '🐀',
-        situational: 'Pharmacologists test a promising new cancer therapy on lab mice and zebrafish because their cellular pathways closely mirror human biology.',
-        mainQuestion: 'Why do medical researchers use surrogate animals in clinical trials?',
-        prompt: 'What are animals called when used in research to study human diseases and treatments?',
-        term: 'Animal Models',
-        subtitle: 'Surrogate Organisms in Biomedical Research',
-        studies: [
-          'Used to study disease mechanisms and safety',
-          'Examples: Mice, Rats, Zebrafish, Primates',
-          'Provide biological data before human clinical trials'
-        ],
-        takeaway: 'Animal models are non-human species used in laboratories to research human disease pathology and drug treatments.'
+        "id": 27,
+        "category": "FUNCTIONAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "⚙️",
+        "question": "While anatomy studies which parts are present, this branch studies how the parts actually run—how fuel burns, pistons pump, and electricity transmits.",
+        "prompt": "What branch studies bodily mechanics and biochemical operations?",
+        "term": "Animal Physiology",
+        "subtitle": "Dynamic Biological Operations"
       },
       {
-        id: 28,
-        category: 'AGRICULTURAL ZOOLOGY',
-        emoji: '🐍',
-        situational: 'Instead of spraying toxic chemical pesticides, a rice farmer releases non-venomous rat snakes into the fields to hunt crop-destroying rodents.',
-        mainQuestion: 'How can natural predators replace chemical pesticides?',
-        prompt: 'What agricultural practice uses natural predators, parasites, or pathogens to reduce pest populations?',
-        term: 'Biological Control (Biocontrol)',
-        subtitle: 'Natural Pest Population Suppression',
-        studies: [
-          'Eco-friendly alternative to chemical insecticides',
-          'Uses natural predators (e.g. snakes for rodents, ladybugs for aphids)',
-          'Maintains ecological balance and crop yield'
-        ],
-        takeaway: 'Biological control is an agricultural method utilizing natural animal enemies to sustainably manage crop pests.'
+        "id": 28,
+        "category": "FUNCTIONAL ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🏃",
+        "question": "A sports scientist measures oxygen uptake, blood lactate levels, nerve impulses, and muscle contraction strength during animal sprinting.",
+        "prompt": "What branch of zoology is this investigation applying?",
+        "term": "Animal Physiology",
+        "subtitle": "Organ System Coordination and Metabolism"
       },
       {
-        id: 29,
-        category: 'CONSERVATION ZOOLOGY',
-        emoji: '🐒',
-        situational: 'The Philippine Tarsier lives exclusively on a few islands in the Philippines (Bohol, Samar, Leyte) and is found nowhere else in the wild on Earth.',
-        mainQuestion: 'What do we call a species restricted to a single geographic area?',
-        prompt: 'What is the conservation term for a species restricted to a specific geographic region?',
-        term: 'Endemic Species',
-        subtitle: 'Species Unique to a Specific Location',
-        studies: [
-          'Found only in one specific region or country',
-          'High priority for local habitat conservation',
-          'Example: Philippine Tarsier, Tamaraw'
-        ],
-        takeaway: 'Endemic species are native and strictly confined to a single geographic territory, making them vulnerable to local habitat loss.'
+        "id": 29,
+        "category": "PHYSIOLOGY CONCEPTS",
+        "cardType": "definition",
+        "emoji": "⚖️",
+        "question": "What is the biological ability of an organism to maintain a stable, balanced internal environment despite drastic changes in the external environment?",
+        "prompt": "What fundamental physiological balancing process is this?",
+        "term": "Homeostasis",
+        "subtitle": "Maintenance of Internal Equilibrium"
       },
       {
-        id: 30,
-        category: 'CONSERVATION ZOOLOGY',
-        emoji: '🦦',
-        situational: 'Sea otters eat sea urchins; when otters are removed, urchins multiply uncontrollably and destroy entire kelp forest habitats for hundreds of other marine animals.',
-        mainQuestion: 'Which species has a disproportionately huge impact on its ecosystem balance?',
-        prompt: 'What ecological term describes a species whose impact is critical to holding its entire community together?',
-        term: 'Keystone Species',
-        subtitle: 'Disproportionately Large Ecological Impact',
-        studies: [
-          'Essential for community structure and biodiversity',
-          'Removal causes ecosystem collapse or drastic shifts',
-          'Example: Sea otters controlling urchins in kelp forests'
-        ],
-        takeaway: 'A keystone species exerts strong ecological regulation; without it, the entire ecosystem structure collapses.'
+        "id": 30,
+        "category": "PHYSIOLOGY CONCEPTS",
+        "cardType": "analogy",
+        "emoji": "🌡️",
+        "question": "Imagine a smart household thermostat that switches on the heater when it freezes outside and switches on the AC when it boils outside, keeping the room at exactly 24°C.",
+        "prompt": "What biological regulatory mechanism is this?",
+        "term": "Homeostasis",
+        "subtitle": "Negative Feedback Regulation"
       },
       {
-        id: 31,
-        category: 'CONSERVATION ZOOLOGY',
-        emoji: '🐼',
-        situational: 'A conservation group features the Giant Panda and Philippine Eagle on posters and donation drives to raise global funds to protect entire forest reserves.',
-        mainQuestion: 'Why do conservation groups use charismatic animals as ambassadors?',
-        prompt: 'What term describes charismatic species used to raise public awareness and funding for broader conservation?',
-        term: 'Flagship Species',
-        subtitle: 'Charismatic Ambassador for Conservation',
-        studies: [
-          'Iconic, recognizable, and appealing species',
-          'Generates public sympathy and financial support',
-          'Protects broader umbrella ecosystems'
-        ],
-        takeaway: 'Flagship species serve as high-profile symbols to rally public support and funding for habitat preservation.'
+        "id": 31,
+        "category": "PHYSIOLOGY CONCEPTS",
+        "cardType": "situational",
+        "emoji": "🐫",
+        "question": "A desert camel withstands 45°C daytime heat without sweating excessively and concentrates its urine so its internal water and electrolyte balance remains steady.",
+        "prompt": "What physiological balancing capability is the camel demonstrating?",
+        "term": "Homeostasis",
+        "subtitle": "Thermoregulation and Osmoregulation"
       },
       {
-        id: 32,
-        category: 'THREATS TO BIODIVERSITY',
-        emoji: '🐸',
-        situational: 'The Cane Toad was introduced to eat beetles, but with no natural predators, it exploded in numbers, poisoned native predators, and depleted local food supplies.',
-        mainQuestion: 'What threat occurs when non-native organisms take over a new habitat?',
-        prompt: 'What are non-native organisms introduced to new environments that cause environmental and economic damage called?',
-        term: 'Invasive Species',
-        subtitle: 'Non-Native Organisms Causing Ecological Harm',
-        studies: [
-          'Outcompete native species for food and space',
-          'Lack natural predators in new habitat',
-          'Example: Cane toad (*Rhinella marina*)'
-        ],
-        takeaway: 'Invasive species disrupt native food chains, outcompete indigenous wildlife, and cause severe ecological damage.'
+        "id": 32,
+        "category": "DEVELOPMENTAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🥚",
+        "question": "What subfield of developmental zoology studies the growth and differentiation of an organism from egg fertilization through blastula and fetal stages until birth or hatching?",
+        "prompt": "What branch of zoology is this?",
+        "term": "Embryology",
+        "subtitle": "Study of Embryonic and Fetal Development"
+      },
+      {
+        "id": 33,
+        "category": "DEVELOPMENTAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "🏗️",
+        "question": "Watching a time-lapse video of a major construction project from the very first cornerstone laid down until the entire skyscraper opens its doors.",
+        "prompt": "What developmental biological science is this?",
+        "term": "Embryology",
+        "subtitle": "Morphogenesis from Single Cell to Organism"
+      },
+      {
+        "id": 34,
+        "category": "DEVELOPMENTAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🧬",
+        "question": "What branch of zoology studies heredity and the transmission of inherited traits and DNA variations from parents to offspring across generations?",
+        "prompt": "What branch of biology is this?",
+        "term": "Genetics",
+        "subtitle": "Study of Heredity and DNA Variations"
+      },
+      {
+        "id": 35,
+        "category": "DEVELOPMENTAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "📖",
+        "question": "Studying the master recipe book and source code passed down from master chefs to apprentice cooks that decides eye color, fur pattern, and physical traits.",
+        "prompt": "What branch of biological inheritance is this?",
+        "term": "Genetics",
+        "subtitle": "Transmission of Biological Information"
+      },
+      {
+        "id": 36,
+        "category": "BEHAVIORAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🦅",
+        "question": "What is the scientific and objective study of animal behavior under natural conditions, interpreted through evolutionary adaptation?",
+        "prompt": "What specialized field of behavioral biology is this?",
+        "term": "Ethology",
+        "subtitle": "Scientific Study of Animal Behavior"
+      },
+      {
+        "id": 37,
+        "category": "BEHAVIORAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "🎥",
+        "question": "Being a silent wildlife documentary filmmaker observing why wolves howl, birds dance for mates, and ants follow chemical scent trails in the wild.",
+        "prompt": "What branch of zoology is this?",
+        "term": "Ethology",
+        "subtitle": "Behavioral Ecology and Adaptation"
+      },
+      {
+        "id": 38,
+        "category": "BEHAVIORAL ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🐒",
+        "question": "Jane Goodall sits quietly in the Gombe forest for months recording how wild chimpanzees make and use tools by stripping leaves off sticks to fish for termites.",
+        "prompt": "What field of zoological science was Jane Goodall conducting?",
+        "term": "Ethology",
+        "subtitle": "Naturalistic Animal Behavior Study"
+      },
+      {
+        "id": 39,
+        "category": "ECOLOGICAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🌿",
+        "question": "What branch of zoology examines how animal species interact with, adapt to, and influence their environment and neighboring species?",
+        "prompt": "What branch of zoology is also called Animal Ecology?",
+        "term": "Ecological Zoology (Animal Ecology)",
+        "subtitle": "Animal-Environment Interactions and Energy Flow"
+      },
+      {
+        "id": 40,
+        "category": "ECOLOGICAL ZOOLOGY",
+        "cardType": "analogy",
+        "emoji": "🏙️",
+        "question": "Studying the economy, traffic, food supply, and community relationships of an entire city to see who provides goods, who consumes resources, and who shares territory.",
+        "prompt": "What ecological branch of animal science is this?",
+        "term": "Ecological Zoology (Animal Ecology)",
+        "subtitle": "Ecosystem Dynamics and Food Webs"
+      },
+      {
+        "id": 41,
+        "category": "ECOLOGICAL ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🦌",
+        "question": "A scientist studies how a population of deer affects vegetation and how environmental changes affect the deer.",
+        "subtext": "Main Question: \"How does the animal interact with its environment?\"",
+        "prompt": "What branch of zoology is this?",
+        "term": "Ecological Zoology",
+        "subtitle": "Also called Animal Ecology"
+      },
+      {
+        "id": 42,
+        "category": "TAXONOMIC BRANCHES",
+        "cardType": "definition",
+        "emoji": "🐜",
+        "question": "What specialized branch of zoology is dedicated exclusively to the scientific study of insects (six-legged hexapods)?",
+        "prompt": "What branch of systematic zoology is this?",
+        "term": "Entomology",
+        "subtitle": "Study of Insects"
+      },
+      {
+        "id": 43,
+        "category": "TAXONOMIC BRANCHES",
+        "cardType": "definition",
+        "emoji": "🐍",
+        "question": "What specialized branch of zoology studies both reptiles (snakes, lizards, turtles) and amphibians (frogs, toads, salamanders)?",
+        "prompt": "What branch of zoology is this?",
+        "term": "Herpetology",
+        "subtitle": "Study of Reptiles and Amphibians"
+      },
+      {
+        "id": 44,
+        "category": "TAXONOMIC BRANCHES",
+        "cardType": "definition",
+        "emoji": "🦜",
+        "question": "What specialized branch of zoology is dedicated to the study of birds, their flight aerodynamics, nesting habits, and seasonal migration?",
+        "prompt": "What branch of zoology is this?",
+        "term": "Ornithology",
+        "subtitle": "Study of Birds"
+      },
+      {
+        "id": 45,
+        "category": "TAXONOMIC BRANCHES",
+        "cardType": "definition",
+        "emoji": "🐟",
+        "question": "What specialized branch of zoology is dedicated to the study of freshwater and marine fishes (Agnatha, Chondrichthyes, Osteichthyes)?",
+        "prompt": "What branch of zoology is this?",
+        "term": "Ichthyology",
+        "subtitle": "Study of Fishes"
+      },
+      {
+        "id": 46,
+        "category": "TAXONOMIC BRANCHES",
+        "cardType": "definition",
+        "emoji": "🪱",
+        "question": "What branch of zoology deals specifically with the study of parasitic worms, including tapeworms (cestodes), flukes (trematodes), and roundworms (nematodes)?",
+        "prompt": "What specialized branch of zoology is this?",
+        "term": "Helminthology",
+        "subtitle": "Study of Parasitic Worms"
+      },
+      {
+        "id": 47,
+        "category": "TAXONOMIC BRANCHES",
+        "cardType": "definition",
+        "emoji": "🦁",
+        "question": "What branch of zoology is devoted to the study of mammals—warm-blooded vertebrates that have fur and nurse their young with milk from mammary glands?",
+        "prompt": "What branch of zoology is this?",
+        "term": "Mammalogy",
+        "subtitle": "Study of Mammals"
+      },
+      {
+        "id": 48,
+        "category": "TAXONOMIC BRANCHES",
+        "cardType": "definition",
+        "emoji": "🐌",
+        "question": "What branch of zoology is dedicated to the study of mollusks like snails, clams, oysters, octopuses, and squids?",
+        "prompt": "What branch of invertebrate zoology is this?",
+        "term": "Malacology",
+        "subtitle": "Study of Mollusks"
+      },
+      {
+        "id": 49,
+        "category": "MEDICAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🦟",
+        "question": "What do we call an organism (commonly an arthropod like a mosquito, flea, or tick) that carries and transmits infectious pathogens between hosts without falling sick itself?",
+        "prompt": "What medical zoology term describes this pathogen carrier?",
+        "term": "Disease Vector",
+        "subtitle": "Carrier and Transmitter of Pathogens"
+      },
+      {
+        "id": 50,
+        "category": "MEDICAL ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🦟",
+        "question": "An Aedes aegypti mosquito bites an infected patient and passes the dengue virus to a healthy person through its salivary glands.",
+        "prompt": "What medical role does the mosquito serve in this disease cycle?",
+        "term": "Disease Vector",
+        "subtitle": "Biological Vector of Infection"
+      },
+      {
+        "id": 51,
+        "category": "MEDICAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🦇",
+        "question": "What is the medical term for infectious diseases that are naturally transmitted from animal reservoir populations to humans (e.g. Rabies, COVID-19, Avian Flu)?",
+        "prompt": "What is the term for animal-to-human infections?",
+        "term": "Zoonotic Diseases (Zoonoses)",
+        "subtitle": "Infections Transmitted from Animals to Humans"
+      },
+      {
+        "id": 52,
+        "category": "MEDICAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🐁",
+        "question": "What term describes non-human species (like mice, rats, or zebrafish) used in laboratory research to simulate human biology and test new medications?",
+        "prompt": "What are these research animals called?",
+        "term": "Animal Models",
+        "subtitle": "Surrogate Organisms in Biomedical Research"
+      },
+      {
+        "id": 53,
+        "category": "AGRICULTURAL ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🐞",
+        "question": "What agricultural practice uses natural animal predators, parasites, or pathogens to sustainably suppress crop-destroying pest populations instead of toxic chemicals?",
+        "prompt": "What eco-friendly pest management practice is this?",
+        "term": "Biological Control (Biocontrol)",
+        "subtitle": "Natural Pest Population Suppression"
+      },
+      {
+        "id": 54,
+        "category": "AGRICULTURAL ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🐍",
+        "question": "Instead of spraying toxic insecticides, a rice farmer releases non-venomous rat snakes and ducks into paddies to hunt rodents and golden apple snails.",
+        "prompt": "What method of agricultural management is the farmer using?",
+        "term": "Biological Control (Biocontrol)",
+        "subtitle": "Predator-Prey Pest Management"
+      },
+      {
+        "id": 55,
+        "category": "CONSERVATION ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🐒",
+        "question": "What is the conservation term for an animal species that is naturally restricted to one specific geographic territory and found nowhere else on Earth (e.g. Philippine Tarsier)?",
+        "prompt": "What term describes species unique to a single location?",
+        "term": "Endemic Species",
+        "subtitle": "Species Unique to a Specific Geographic Area"
+      },
+      {
+        "id": 56,
+        "category": "CONSERVATION ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🦦",
+        "question": "What ecological term describes a species whose impact is critical to holding its entire ecosystem together, such that its removal causes ecosystem collapse (e.g. Sea otters)?",
+        "prompt": "What critical ecosystem-defining species is this?",
+        "term": "Keystone Species",
+        "subtitle": "Disproportionately Large Ecological Impact"
+      },
+      {
+        "id": 57,
+        "category": "CONSERVATION ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🦦",
+        "question": "When sea otters are removed from a coastline, sea urchins multiply unchecked and devour entire underwater kelp forests, destroying habitats for hundreds of fish species.",
+        "prompt": "What ecological role were the sea otters fulfilling?",
+        "term": "Keystone Species",
+        "subtitle": "Trophic Cascade Regulator"
+      },
+      {
+        "id": 58,
+        "category": "CONSERVATION ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🐼",
+        "question": "What term describes charismatic, iconic animals (like the Giant Panda or Philippine Eagle) featured on campaign posters to rally public support and funds for broader habitat protection?",
+        "prompt": "What conservation ambassador species is this?",
+        "term": "Flagship Species",
+        "subtitle": "Charismatic Ambassador for Conservation"
+      },
+      {
+        "id": 59,
+        "category": "CONSERVATION ZOOLOGY",
+        "cardType": "definition",
+        "emoji": "🐸",
+        "question": "What term describes non-native organisms introduced to a new environment that multiply uncontrollably, lack natural predators, and cause ecological or economic harm?",
+        "prompt": "What ecological threat is this?",
+        "term": "Invasive Species",
+        "subtitle": "Non-Native Ecological Disruptors"
+      },
+      {
+        "id": 60,
+        "category": "CONSERVATION ZOOLOGY",
+        "cardType": "situational",
+        "emoji": "🐸",
+        "question": "The Cane Toad was introduced to eat sugarcane beetles, but with no natural predators, its population exploded, poisoning native monitor lizards and depleting local food supplies.",
+        "prompt": "What category of harmful organism is the Cane Toad?",
+        "term": "Invasive Species",
+        "subtitle": "Exotic Invasive Population"
       }
     ]
   },
-
-  // =========================================================================
-  // TOPIC 2: TAXONOMY, PHYLOGENY & CLADISTICS
-  // =========================================================================
   {
-    id: 'zoology-2',
-    title: 'Taxonomy, Phylogeny & Cladistics',
-    badge: 'Topic 2',
-    description: 'Linnaean hierarchy, binomial nomenclature, phylogenetic trees, ancestral vs derived traits, and cladistic analysis.',
-    icon: '🌿',
-    cards: [
+    "id": "zoology-2",
+    "title": "Taxonomy, Phylogeny & Cladistics",
+    "badge": "Topic 2",
+    "description": "Linnaean hierarchy, binomial nomenclature, phylogenetic trees, ancestral vs derived traits, and cladistic analysis.",
+    "icon": "🌿",
+    "cards": [
       {
-        id: 1,
-        category: 'TAXONOMY BASICS',
-        emoji: '🏷️',
-        situational: 'A museum curator discovers an unnamed marine creature, documents its anatomical traits, gives it a formal Latin name, and places it into the animal classification registry.',
-        mainQuestion: 'What scientific discipline identifies, names, and classifies life?',
-        prompt: 'What is the science of identification, naming, and classification of species?',
-        term: 'Taxonomy',
-        subtitle: 'Identification, Naming, & Classification of Species',
-        studies: [
-          'Species identification based on physical and genetic traits',
-          'Standardized binomial naming system',
-          'Hierarchical grouping into classification ranks'
-        ],
-        takeaway: 'Taxonomy provides the universal scientific framework to identify, name, and categorize Earth\'s biodiversity.'
+        "id": 1,
+        "category": "TAXONOMY BASICS",
+        "cardType": "definition",
+        "emoji": "🏷️",
+        "question": "What is the scientific discipline dedicated to identifying, naming, and classifying living organisms into hierarchical groups?",
+        "prompt": "What fundamental branch of biology is this?",
+        "term": "Taxonomy",
+        "subtitle": "Identification, Naming, & Classification of Species"
       },
       {
-        id: 2,
-        category: 'TAXONOMY BASICS',
-        emoji: '👨‍🔬',
-        situational: 'In the 18th century, a Swedish botanist and zoologist replaces messy multi-line descriptions with a clean, universal two-part Latin naming system.',
-        mainQuestion: 'Who is recognized as the Father of Modern Taxonomy?',
-        prompt: 'Which Swedish scientist developed the formal biological naming system used today?',
-        term: 'Carolus Linnaeus (1707–1778)',
-        subtitle: 'Father of Modern Taxonomy',
-        studies: [
-          'Swedish botanist, zoologist, and physician',
-          'Pioneered binomial nomenclature (Genus species)',
-          'Organized nature into hierarchical nested ranks'
-        ],
-        takeaway: 'Linnaeus revolutionized biology by introducing binomial nomenclature and standard hierarchical taxonomy.'
+        "id": 2,
+        "category": "TAXONOMY BASICS",
+        "cardType": "analogy",
+        "emoji": "📚",
+        "question": "Imagine organizing a massive library containing millions of books by giving each book a barcode, author tag, shelf category, and aisle number so anyone worldwide can find it.",
+        "prompt": "What scientific organizing discipline is this?",
+        "term": "Taxonomy",
+        "subtitle": "Universal Biological Cataloging"
       },
       {
-        id: 3,
-        category: 'TAXONOMY BASICS',
-        emoji: '✍️',
-        situational: 'A biologist writes the scientific name for the African lion as *Panthera leo* and for modern humans as *Homo sapiens*, with the first word capitalized and the second lowercase.',
-        mainQuestion: 'What is the universal two-part Latin naming format?',
-        prompt: 'What is the formal two-part naming system for living organisms consisting of Genus and species?',
-        term: 'Binomial Nomenclature',
-        subtitle: 'Two-part Latin Naming System (Genus + species)',
-        studies: [
-          'Genus name is capitalized, species identifier is lowercase',
-          'Both words are italicized (or underlined when handwritten)',
-          'Replaced long, inconsistent descriptive phrases'
-        ],
-        takeaway: 'Binomial nomenclature assigns every living organism a unique, universal two-word scientific name.'
+        "id": 3,
+        "category": "TAXONOMY BASICS",
+        "cardType": "situational",
+        "emoji": "🌿",
+        "question": "A field biologist collects an unnamed flowering orchid in the mountains, documents its floral anatomy, assigns it a formal Latin name, and logs it in the global registry.",
+        "prompt": "What scientific discipline is the biologist performing?",
+        "term": "Taxonomy",
+        "subtitle": "Species Discovery and Classification"
       },
       {
-        id: 4,
-        category: 'TAXONOMY BASICS',
-        emoji: '📚',
-        situational: 'A zoological committee references the 10th edition (published in 1758) of an ancient book to verify the earliest valid scientific name given to a bird species.',
-        mainQuestion: 'What historical book is the official starting point for zoological naming?',
-        prompt: 'What landmark book by Linnaeus (10th edition, 1758) is accepted as the starting point for zoological nomenclature?',
-        term: 'Systema Naturae (1758, 10th Edition)',
-        subtitle: 'Official Starting Point of Modern Zoological Nomenclature',
-        studies: [
-          'First published in 1735 by Carolus Linnaeus',
-          'Classified thousands of plant, animal, and mineral species',
-          '10th edition (1758) standardized zoological naming rules'
-        ],
-        takeaway: 'Linnaeus\' Systema Naturae (10th Edition, 1758) is the internationally accepted foundation for zoological names.'
+        "id": 4,
+        "category": "TAXONOMY BASICS",
+        "cardType": "history",
+        "emoji": "👨‍🔬",
+        "question": "Who was the 18th-century Swedish botanist and physician recognized as the \"Father of Modern Taxonomy\" for establishing binomial nomenclature and nested hierarchies?",
+        "prompt": "Which historic Swedish scientist is this?",
+        "term": "Carolus Linnaeus (1707–1778)",
+        "subtitle": "Father of Modern Taxonomy"
       },
       {
-        id: 5,
-        category: 'TAXONOMIC HIERARCHY',
-        emoji: '📶',
-        situational: 'A biology student classifies the leopard (*Panthera pardus*) step by step from Domain Eukarya down to Kingdom, Phylum, Class, Order, Family, Genus, and Species.',
-        mainQuestion: 'What is the nested ranking framework of biological classification?',
-        prompt: 'What is the hierarchical framework of nested taxonomic ranks from broadest to most specific?',
-        term: 'Taxonomic Hierarchy',
-        subtitle: 'Domain → Kingdom → Phylum → Class → Order → Family → Genus → Species',
-        studies: [
-          'Broadest rank: Domain (Eukarya)',
-          'Intermediate ranks: Kingdom, Phylum, Class, Order, Family',
-          'Most specific ranks: Genus, Species (*Panthera pardus*)'
-        ],
-        takeaway: 'The taxonomic hierarchy organizes life into progressively narrower nested categories from Domain to Species.'
+        "id": 5,
+        "category": "BINOMIAL NOMENCLATURE",
+        "cardType": "definition",
+        "emoji": "✍️",
+        "question": "What is the formal two-part Latin scientific naming system for living organisms consisting of the Genus name (capitalized) and the specific epithet (lowercase)?",
+        "prompt": "What universal biological naming system is this?",
+        "term": "Binomial Nomenclature",
+        "subtitle": "Two-Part Scientific Naming (Genus + species)"
       },
       {
-        id: 6,
-        category: 'THREE DOMAINS',
-        emoji: '🌐',
-        situational: 'Biologists divide all life on Earth into three massive domains based on cellular organization and ribosomal RNA sequences: Bacteria, Archaea, and Eukarya.',
-        mainQuestion: 'What are the three highest primary domains of life?',
-        prompt: 'What are the three fundamental domains of all living organisms?',
-        term: 'The Three Domains of Life',
-        subtitle: 'Domain Bacteria, Domain Archaea, Domain Eukarya',
-        studies: [
-          'Domain Bacteria (true prokaryotic bacteria)',
-          'Domain Archaea (ancient extremophile prokaryotes)',
-          'Domain Eukarya (organisms with membrane-bound nuclei)'
-        ],
-        takeaway: 'The three domains (Bacteria, Archaea, Eukarya) represent the deepest evolutionary divisions of life on Earth.'
+        "id": 6,
+        "category": "BINOMIAL NOMENCLATURE",
+        "cardType": "analogy",
+        "emoji": "📛",
+        "question": "Think of it as a formal First Name (Genus) and Last Name (species) written in universal Latin, so a lion is known as *Panthera leo* by scientists in America, Japan, and the Philippines alike.",
+        "prompt": "What naming convention is this?",
+        "term": "Binomial Nomenclature",
+        "subtitle": "Universal Two-Word Scientific Names"
       },
       {
-        id: 7,
-        category: 'PHYLOGENY',
-        emoji: '🌳',
-        situational: 'An evolutionary biologist maps out the family history of modern carnivores to uncover how leopards, skunks, otters, and dogs branched off from a shared ancestor.',
-        mainQuestion: 'What do we call the evolutionary history and relationships of species?',
-        prompt: 'What is the term for the evolutionary history and lines of descent among groups of organisms?',
-        term: 'Phylogeny',
-        subtitle: 'Evolutionary History & Lines of Descent',
-        studies: [
-          'Traces lines of descent over geological time',
-          'Uncovers shared common ancestors',
-          'Goal of modern classification is to reflect phylogeny'
-        ],
-        takeaway: 'Phylogeny describes the evolutionary relationships and historical ancestry connecting different species.'
+        "id": 7,
+        "category": "BINOMIAL NOMENCLATURE",
+        "cardType": "concept",
+        "emoji": "📝",
+        "question": "How must scientific binomial names always be formatted when printed/typed versus when written by hand?",
+        "subtext": "Printed: Italicized (e.g. *Homo sapiens*); Handwritten: Underlined (e.g. Homo sapiens)",
+        "prompt": "What are the formal formatting rules for scientific names?",
+        "term": "Italicized (Typed) / Underlined (Handwritten)",
+        "subtitle": "Binomial Formatting Rules"
       },
       {
-        id: 8,
-        category: 'PHYLOGENETIC TREES',
-        emoji: '🌲',
-        situational: 'A textbook displays a branching tree diagram where the branch tips show present-day mammals and the internal fork nodes represent their extinct common ancestors.',
-        mainQuestion: 'How do scientists visualize evolutionary branching patterns?',
-        prompt: 'What is a branching diagram representing the evolutionary history and relationships of species called?',
-        term: 'Phylogenetic Tree (Tree Diagram)',
-        subtitle: 'Branching Model of Evolutionary History',
-        studies: [
-          'Tips of branches represent present-day species of interest',
-          'Branch points (nodes) represent most recent common ancestors',
-          'Vertical axis implicitly represents evolutionary time moving upward'
-        ],
-        takeaway: 'A phylogenetic tree is a branching diagram modeling the evolutionary descent and common ancestors of a group of organisms.'
+        "id": 8,
+        "category": "HISTORICAL MILESTONES",
+        "cardType": "history",
+        "emoji": "📖",
+        "question": "What landmark publication by Carolus Linnaeus (10th Edition, published in 1758) is officially recognized as the universal starting point for modern zoological nomenclature?",
+        "prompt": "What historic book established formal zoological naming?",
+        "term": "Systema Naturae (1758, 10th Edition)",
+        "subtitle": "Official Starting Point of Modern Zoological Nomenclature"
       },
       {
-        id: 9,
-        category: 'PHYLOGENY',
-        emoji: '📖',
-        situational: 'Early naturalists grouped animals strictly by surface similarity, but after 1859, scientists grouped species based on true evolutionary descent from common ancestors.',
-        mainQuestion: 'What 1859 milestone established evolutionary descent as the basis for taxonomy?',
-        prompt: 'Which book by Charles Darwin established evolutionary descent as the core foundation for classification?',
-        term: 'On the Origin of Species (1859)',
-        subtitle: 'Darwin’s Foundation for Evolutionary Classification',
-        studies: [
-          'Replaced arbitrary grouping by superficial looks',
-          'Established "descent with modification"',
-          'Connected taxonomy directly to evolutionary ancestry'
-        ],
-        takeaway: 'Darwin\'s 1859 work transformed taxonomy from superficial grouping to an evolutionary science based on shared ancestry.'
+        "id": 9,
+        "category": "TAXONOMIC HIERARCHY",
+        "cardType": "structure",
+        "emoji": "🪜",
+        "question": "What are the 8 standard taxonomic ranks in order from the broadest, most inclusive level down to the most specific single-species rank?",
+        "subtext": "Domain ➔ Kingdom ➔ Phylum ➔ Class ➔ Order ➔ Family ➔ Genus ➔ Species",
+        "prompt": "What are the 8 nested ranks of the Linnaean hierarchy?",
+        "term": "8-Rank Taxonomic Hierarchy",
+        "subtitle": "Domain • Kingdom • Phylum • Class • Order • Family • Genus • Species"
       },
       {
-        id: 10,
-        category: 'CLADISTICS',
-        emoji: '🌿',
-        situational: 'A researcher builds a group containing a single ancestral reptile species and ALL of its modern descendants (birds, crocodilians, dinosaurs), forming a complete monophyletic group.',
-        mainQuestion: 'What method searches strictly for common ancestors and all their descendants?',
-        prompt: 'What is the scientific approach that groups organisms into clades based on shared derived traits?',
-        term: 'Cladistic Analysis (Cladistics)',
-        subtitle: 'Searching for Monophyletic Clades',
-        studies: [
-          'Developed by German entomologist Willi Hennig',
-          'A clade includes one common ancestor and ALL its descendants',
-          'Relies strictly on sorting ancestral vs derived traits'
-        ],
-        takeaway: 'Cladistics organizes species into monophyletic clades based on shared derived evolutionary novelties.'
+        "id": 10,
+        "category": "TAXONOMIC HIERARCHY",
+        "cardType": "analogy",
+        "emoji": "📫",
+        "question": "Imagine a postal mailing address zooming in from Country (Domain) ➔ State (Kingdom) ➔ City (Phylum) ➔ District (Class) ➔ Neighborhood (Order) ➔ Street (Family) ➔ Building (Genus) ➔ Unit Number (Species).",
+        "prompt": "What biological organizing framework works like this address system?",
+        "term": "Linnaean Taxonomic Hierarchy",
+        "subtitle": "Nested Classification Ranks"
       },
       {
-        id: 11,
-        category: 'PHYLOGENETIC PRINCIPLE',
-        emoji: '⏳',
-        situational: 'Leopards and skunks share a more recent common ancestor with each other than with fish, so they are grouped together in Order Carnivora while fish branch off much earlier.',
-        mainQuestion: 'How does the recency of a common ancestor dictate taxonomic grouping?',
-        prompt: 'What evolutionary principle classifies species closer together if they share a more recent common ancestor?',
-        term: 'Phylogenetic Principle of Classification',
-        subtitle: 'Grouping by Recency of Common Ancestry',
-        studies: [
-          'Recent common ancestor ➔ grouped closely together',
-          'Distant common ancestor ➔ grouped further apart',
-          'Reflects chronological order of evolutionary divergence'
-        ],
-        takeaway: 'The phylogenetic principle groups species according to how recently they shared a common ancestor.'
+        "id": 11,
+        "category": "TAXONOMIC RANKS",
+        "cardType": "definition",
+        "emoji": "👑",
+        "question": "What is the highest, broadest, and most inclusive category in modern biological classification, positioned above Kingdom?",
+        "prompt": "What is the top-level taxonomic rank?",
+        "term": "Domain",
+        "subtitle": "Broadest Taxonomic Rank (Bacteria, Archaea, Eukarya)"
       },
       {
-        id: 12,
-        category: 'TRAIT TYPES',
-        emoji: '👴',
-        situational: 'All vertebrates in a study possess a backbone because their original ancient ancestor already had a vertebral column hundreds of millions of years ago.',
-        mainQuestion: 'What do we call a trait that was already present in the original ancestor?',
-        prompt: 'What is a trait called that was present in the common ancestor of a group of interest?',
-        term: 'Ancestral Trait (Plesiomorphy)',
-        subtitle: 'Primitive Feature Inherited from Common Ancestor',
-        studies: [
-          'Present in the common ancestor of the group',
-          'Examples: Vertebral column in mammals, lack of whiskers in early mice',
-          'Does not distinguish closely related modern subgroups'
-        ],
-        takeaway: 'An ancestral trait is a primitive character state inherited unchanged from the common ancestor.'
+        "id": 12,
+        "category": "THREE DOMAINS",
+        "cardType": "definition",
+        "emoji": "🧬",
+        "question": "What are the 3 major evolutionary domains of cellular life proposed by Carl Woese based on ribosomal RNA (rRNA) sequence analysis?",
+        "subtext": "Domain Bacteria, Domain Archaea, Domain Eukarya",
+        "prompt": "What are the Three Domains of Life?",
+        "term": "Bacteria • Archaea • Eukarya",
+        "subtitle": "The Three-Domain Classification System"
       },
       {
-        id: 13,
-        category: 'TRAIT TYPES',
-        emoji: '✨',
-        situational: 'During mouse evolution, a new lineage develops big ears and a fuzzy tail that were completely absent in the original ancestral population.',
-        mainQuestion: 'What do we call a newly evolved trait that differs from the ancestral form?',
-        prompt: 'What is a trait that arose during the evolution of a lineage and differs from the ancestral state called?',
-        term: 'Derived Trait (Apomorphy)',
-        subtitle: 'Evolutionary Novelty Arising in a Lineage',
-        studies: [
-          'Novel trait arising along an evolutionary lineage',
-          'Can appear through the GAIN or LOSS of a feature (e.g. taillessness)',
-          'Distinguishes newer descendant branches from older ancestors'
-        ],
-        takeaway: 'A derived trait is an evolutionary novelty that arose in a descendant group and differs from the ancestral state.'
+        "id": 13,
+        "category": "TAXONOMIC RANKS",
+        "cardType": "definition",
+        "emoji": "🎯",
+        "question": "What is the fundamental, most specific rank of taxonomy, defined as a group of organisms that can interbreed in nature and produce viable, fertile offspring?",
+        "prompt": "What is the basic biological unit of classification?",
+        "term": "Species",
+        "subtitle": "Fundamental Unit of Biological Classification"
       },
       {
-        id: 14,
-        category: 'CLADISTICS',
-        emoji: '🔑',
-        situational: 'Both bald eagles and alligators share a muscular gizzard that evolved in their common archosaur ancestor, allowing scientists to link them together on the tree.',
-        mainQuestion: 'What type of trait provides the evidence needed to build phylogenetic branch points?',
-        prompt: 'What are novel derived traits shared among multiple descendant species called in cladistics?',
-        term: 'Shared Derived Traits (Synapomorphies)',
-        subtitle: 'Key Evidence for Building Cladograms',
-        studies: [
-          'Derived traits shared by two or more species in a dataset',
-          'Form nested patterns that identify branching points',
-          'Primary evidence used to construct phylogenetic trees'
-        ],
-        takeaway: 'Shared derived traits (synapomorphies) are the definitive evidence used to reconstruct evolutionary branching patterns.'
+        "id": 14,
+        "category": "PHYLOGENY",
+        "cardType": "definition",
+        "emoji": "🌳",
+        "question": "What is the scientific study of the evolutionary history and genealogical relationships among individuals, populations, or species?",
+        "prompt": "What field of evolutionary biology is this?",
+        "term": "Phylogeny",
+        "subtitle": "Evolutionary History and Lineage Relationships"
       },
       {
-        id: 15,
-        category: 'TREE BUILDING',
-        emoji: '🐟',
-        situational: 'When analyzing jaws, lungs, and fur in vertebrates, scientists use the jawless Lamprey as a distant reference species to establish which traits are primitive.',
-        mainQuestion: 'What reference species acts as a baseline proxy for the ancestral state?',
-        prompt: 'What is a distantly related reference species used in cladistics as a proxy for ancestral traits called?',
-        term: 'Outgroup',
-        subtitle: 'Distant Relative Used as Ancestral Baseline',
-        studies: [
-          'More distantly related to the study group than they are to one another',
-          'Serves as a proxy for ancestral trait states',
-          'Example: Lamprey (lacks jaws, lungs, fur, feathers)'
-        ],
-        takeaway: 'An outgroup provides an evolutionary baseline to determine whether traits in the study group are ancestral or derived.'
+        "id": 15,
+        "category": "PHYLOGENY",
+        "cardType": "analogy",
+        "emoji": "📜",
+        "question": "Think of an extensive genealogical family tree that maps out your ancestral roots, grandparents, uncles, and distant cousins over millions of years of history.",
+        "prompt": "What evolutionary lineage chart is this?",
+        "term": "Phylogenetic Tree (Tree of Life)",
+        "subtitle": "Evolutionary Genealogy"
       },
       {
-        id: 16,
-        category: 'TREE BUILDING',
-        emoji: '📊',
-        situational: 'Students are given a matrix comparing Lamprey, Antelope, Bald eagle, Alligator, and Sea bass across features scored as present (+) or absent (0).',
-        mainQuestion: 'What table format is used to convert morphological data into a tree?',
-        prompt: 'What is the table showing presence (+) or absence (0) of traits across species used for tree building called?',
-        term: 'Character Matrix (Trait Table)',
-        subtitle: 'Binary Data Matrix for Cladistic Reconstruction',
-        studies: [
-          'Rows list morphological features (lungs, jaws, feathers, fur)',
-          'Columns list study organisms and outgroup',
-          'Scored as present (+) or absent (0)'
-        ],
-        takeaway: 'A character matrix organizes trait data in a binary table to deduce the most parsimonious evolutionary tree.'
+        "id": 16,
+        "category": "TREE ANATOMY",
+        "cardType": "structure",
+        "emoji": "🌱",
+        "question": "In a phylogenetic tree diagram, what do we call the baseline lineage at the base of the diagram that represents the ancestral lineage common to all taxa shown?",
+        "prompt": "What is the base of a phylogenetic tree called?",
+        "term": "Root (Rooted Ancestor)",
+        "subtitle": "Common Ancestral Lineage of the Tree"
       },
       {
-        id: 17,
-        category: 'VERTEBRATE EVOLUTION',
-        emoji: '🦈',
-        situational: 'In the vertebrate dataset, all species (Sea bass, Antelope, Eagle, Alligator) possess jaws, while the outgroup Lamprey lacks them.',
-        mainQuestion: 'What was the first major shared derived trait to evolve after the jawless fish?',
-        prompt: 'Which derived trait separates the jawed vertebrates from the jawless Lamprey outgroup?',
-        term: 'Jaws',
-        subtitle: 'First Shared Derived Trait in Gnathostome Evolution',
-        studies: [
-          'Shared by Sea bass, Antelope, Bald eagle, and Alligator',
-          'Absent only in the Lamprey outgroup',
-          'Marks the first major evolutionary branch point'
-        ],
-        takeaway: 'The evolution of jaws distinguishes all jawed vertebrates (gnathostomes) from ancestral jawless agnathans.'
+        "id": 17,
+        "category": "TREE ANATOMY",
+        "cardType": "structure",
+        "emoji": "🔀",
+        "question": "In a phylogenetic tree, what does a branch point or node represent where a single lineage divides into two separate evolutionary paths?",
+        "prompt": "What evolutionary event does a node signify?",
+        "term": "Node (Branch Point / MRCA)",
+        "subtitle": "Most Recent Common Ancestor and Lineage Split"
       },
       {
-        id: 18,
-        category: 'VERTEBRATE EVOLUTION',
-        emoji: '🫁',
-        situational: 'Antelopes, eagles, and alligators possess lungs for air breathing, while the aquatic Sea bass relies on gills.',
-        mainQuestion: 'What derived organ distinguishes land vertebrates from fish?',
-        prompt: 'Which derived trait separates terrestrial tetrapods from the aquatic Sea bass?',
-        term: 'Lungs',
-        subtitle: 'Derived Trait Enabling Terrestrial Respiration',
-        studies: [
-          'Shared by Antelope, Bald eagle, and Alligator',
-          'Absent in aquatic fishes (Sea bass and Lamprey)',
-          'Facilitated vertebrate transition from water to land'
-        ],
-        takeaway: 'Lungs represent a key shared derived adaptation allowing tetrapod lineages to breathe atmospheric oxygen.'
+        "id": 18,
+        "category": "TREE ANATOMY",
+        "cardType": "structure",
+        "emoji": "👯",
+        "question": "What term describes two biological lineages or species that share an immediate common ancestor with each other that is not shared by any other group?",
+        "prompt": "What are these closely related evolutionary pairs called?",
+        "term": "Sister Taxa",
+        "subtitle": "Closest Evolutionary Relatives"
       },
       {
-        id: 19,
-        category: 'VERTEBRATE EVOLUTION',
-        emoji: '🦅',
-        situational: 'Both the Bald eagle and Alligator possess a specialized muscular gizzard for grinding food, which the mammalian Antelope lacks.',
-        mainQuestion: 'What shared organ unites birds and crocodilians into the Archosaur clade?',
-        prompt: 'Which derived digestive feature links alligators and bald eagles on the phylogenetic tree?',
-        term: 'Gizzard',
-        subtitle: 'Shared Derived Trait of Archosaurs (Birds & Crocodilians)',
-        studies: [
-          'Shared by Alligator and Bald eagle',
-          'Absent in Antelope, Sea bass, and Lamprey',
-          'Defines the common archosaur evolutionary lineage'
-        ],
-        takeaway: 'The gizzard is a shared derived synapomorphy linking crocodilians and birds in the archosaur lineage.'
+        "id": 19,
+        "category": "TREE ANATOMY",
+        "cardType": "structure",
+        "emoji": "🔱",
+        "question": "In a phylogenetic tree, what is a branch point from which more than two descendant groups emerge simultaneously, indicating an unresolved evolutionary relationship?",
+        "prompt": "What is this multi-branching unresolved point called?",
+        "term": "Polytomy",
+        "subtitle": "Unresolved Multi-Lineage Evolutionary Split"
       },
       {
-        id: 20,
-        category: 'TRAIT TYPES',
-        emoji: '🪶',
-        situational: 'Fur is found ONLY in the antelope, and feathers are found ONLY in the bald eagle within the study dataset.',
-        mainQuestion: 'How are unique traits found in only a single species placed on a tree?',
-        prompt: 'What are derived traits unique to a single species that do not help group multiple species called?',
-        term: 'Unshared Derived Traits (Autapomorphies)',
-        subtitle: 'Unique Traits on Terminal Lineage Branches',
-        studies: [
-          'Found in only a single species in the dataset',
-          'Do not help resolve branching order between species',
-          'Placed at the terminal branch tip of that individual species'
-        ],
-        takeaway: 'Unshared derived traits (autapomorphies) define individual terminal species but do not clarify branching relationships.'
+        "id": 20,
+        "category": "TREE ANATOMY",
+        "cardType": "structure",
+        "emoji": "🐟",
+        "question": "What do we call a reference species or group that is known to have diverged before the lineage containing the species being studied, used as a baseline to determine ancestral traits?",
+        "prompt": "What reference lineage is used as a baseline in cladistics?",
+        "term": "Outgroup (e.g. Lamprey)",
+        "subtitle": "Evolutionary Baseline Reference Taxon"
       },
       {
-        id: 21,
-        category: 'MOLECULAR EVIDENCE',
-        emoji: '🧬',
-        situational: 'Scientists compare the DNA nucleotide sequences of orthologous hemoglobin genes across chimpanzees, humans, and lemurs to calculate genetic divergence.',
-        mainQuestion: 'How does modern biology infer phylogenetic trees using molecular data?',
-        prompt: 'What modern molecular evidence compares DNA and protein sequences to reconstruct evolutionary trees?',
-        term: 'Molecular Sequence Evidence (DNA & Proteins)',
-        subtitle: 'Biochemical & Genetic Basis for Phylogeny',
-        studies: [
-          'Compares nucleotide sequences in orthologous genes',
-          'Closely related species have few sequence differences',
-          'Distantly related species accumulate more mutations over time'
-        ],
-        takeaway: 'Molecular sequencing uses DNA and protein sequence similarities to measure evolutionary distance and lineage divergence.'
+        "id": 21,
+        "category": "CLADISTICS",
+        "cardType": "definition",
+        "emoji": "📐",
+        "question": "What biological classification methodology, developed by Willi Hennig, reconstructs evolutionary trees strictly based on shared derived characteristics (synapomorphies)?",
+        "prompt": "What phylogenetic classification system is this?",
+        "term": "Cladistics (Cladistic Analysis)",
+        "subtitle": "Phylogenetic Systematics Pioneered by Willi Hennig"
       },
       {
-        id: 22,
-        category: 'APPLICATIONS OF PHYLOGENY',
-        emoji: '⚖️',
-        situational: 'A crime lab uses phylogenetic DNA tree analysis to match crime scene blood evidence to a suspect, and to trace the source of contaminated food.',
-        mainQuestion: 'How is phylogenetics applied in legal and criminal investigations?',
-        prompt: 'In which practical field is phylogenetic DNA analysis used in court cases and paternity verification?',
-        term: 'Forensics (DNA Forensics)',
-        subtitle: 'Phylogenetic Analysis in Legal & Criminal Investigations',
-        studies: [
-          'Assessing DNA evidence presented in court cases',
-          'Determining paternity and suspect identification',
-          'Tracing commercial food and agricultural contamination sources'
-        ],
-        takeaway: 'Forensic phylogenetics evaluates DNA sequence relatedness to establish legal evidence in criminal and paternity cases.'
+        "id": 22,
+        "category": "CLADISTICS",
+        "cardType": "definition",
+        "emoji": "⭕",
+        "question": "What term describes a valid evolutionary group (clade) that consists of an ancestral species and ALL of its evolutionary descendants without omitting any branch?",
+        "prompt": "What is a complete single-ancestor clade called?",
+        "term": "Monophyletic Group (Clade)",
+        "subtitle": "Ancestor and ALL Descendants (Valid Clade)"
       },
       {
-        id: 23,
-        category: 'APPLICATIONS OF PHYLOGENY',
-        emoji: '🦠',
-        situational: 'During a viral outbreak, epidemiologists sequence viral genomes and build a phylogenetic tree to trace which animal reservoir passed the virus to humans.',
-        mainQuestion: 'How do public health officials trace the animal origin of new epidemics?',
-        prompt: 'What critical medical application uses phylogenetic sequencing to identify the source of infectious disease outbreaks?',
-        term: 'Identifying Origin of Pathogens',
-        subtitle: 'Epidemiological Tracing of Disease Outbreaks',
-        studies: [
-          'Molecular sequencing of emerging viruses and bacteria',
-          'Identifies animal host reservoirs and transmission pathways',
-          'Informs public health policy and vaccine development'
-        ],
-        takeaway: 'Phylogenetic pathogen tracing identifies the animal sources and transmission chains of emerging disease outbreaks.'
+        "id": 23,
+        "category": "CLADISTICS",
+        "cardType": "analogy",
+        "emoji": "✂️",
+        "question": "Imagine taking scissors and snipping off a single branch from a tree. If every single twig, leaf, and sprout attached to that branch falls with it, you have cut a complete unit.",
+        "prompt": "What type of evolutionary group is this?",
+        "term": "Monophyletic Group (Clade)",
+        "subtitle": "One Cut = Complete Evolutionary Clade"
       },
       {
-        id: 24,
-        category: 'SUMMARY CONCEPTS',
-        emoji: '💡',
-        situational: 'A biologist explains that a phylogenetic tree is not an unchangeable drawing, but a proposed model that can be revised as new genetic data is discovered.',
-        mainQuestion: 'What is the true scientific nature of a phylogenetic tree diagram?',
-        prompt: 'What is a phylogenetic tree in scientific terms?',
-        term: 'Phylogenetic Tree as a Hypothesis',
-        subtitle: 'Testable Model of Evolutionary Relationships',
-        studies: [
-          'Represents a working hypothesis about evolutionary history',
-          'Subject to testing and revision with new data',
-          'Seeks the simplest possible branching pattern (parsimony)'
-        ],
-        takeaway: 'Phylogenetic trees are testable evolutionary hypotheses that are updated as new morphological and genetic data emerges.'
+        "id": 24,
+        "category": "CLADISTICS",
+        "cardType": "definition",
+        "emoji": "✂️",
+        "question": "What term describes an incomplete evolutionary group that consists of a common ancestor and SOME, but not all, of its descendants (e.g. Class Reptilia excluding birds)?",
+        "prompt": "What is an incomplete evolutionary grouping called?",
+        "term": "Paraphyletic Group",
+        "subtitle": "Ancestor and SOME Descendants"
       },
       {
-        id: 25,
-        category: 'METHODOLOGY SUMMARY',
-        emoji: '🌐',
-        situational: 'An evolutionary department uses multiple techniques—including fossil records, morphology, and molecular clocks—to reconstruct the overall history of life.',
-        mainQuestion: 'What is the comprehensive broad field that investigates evolutionary history?',
-        prompt: 'What comprehensive field investigates the overall evolutionary pathways and history of life using various methods?',
-        term: 'Phylogenetic Analysis',
-        subtitle: 'Comprehensive Field of Evolutionary History',
-        studies: [
-          'Broad umbrella field investigating evolutionary history',
-          'Integrates fossil, morphological, and molecular data',
-          'Reconstructs the tree of life across geological eras'
-        ],
-        takeaway: 'Phylogenetic analysis is the comprehensive discipline that investigates the evolutionary pathways of all living organisms.'
+        "id": 25,
+        "category": "CLADISTICS",
+        "cardType": "definition",
+        "emoji": "🧩",
+        "question": "What term describes an unnatural group containing distantly related species derived from different lineages that does NOT include their most recent common ancestor?",
+        "prompt": "What invalid multi-origin grouping is this?",
+        "term": "Polyphyletic Group",
+        "subtitle": "Species Grouped Without Their Common Ancestor"
       },
       {
-        id: 26,
-        category: 'METHODOLOGY SUMMARY',
-        emoji: '📐',
-        situational: 'A systematist strictly classifies species by identifying shared derived characters (synapomorphies) to define monophyletic clades.',
-        mainQuestion: 'What specific methodological approach was developed by Willi Hennig?',
-        prompt: 'What specific methodology strictly sorts traits into ancestral and derived states to define monophyletic clades?',
-        term: 'Cladistic Analysis (Summary)',
-        subtitle: 'Strict Trait Sorting into Ancestral vs Derived States',
-        studies: [
-          'Specific methodological approach by Willi Hennig',
-          'Relies strictly on shared derived traits (synapomorphies)',
-          'Rejects paraphyletic and polyphyletic groupings'
-        ],
-        takeaway: 'Cladistic analysis strictly uses shared derived traits to identify monophyletic clades sharing a single common ancestor.'
+        "id": 26,
+        "category": "TRAIT STATES",
+        "cardType": "definition",
+        "emoji": "🏛️",
+        "question": "What is the formal cladistic term for an ancestral character state that was present in the common ancestor and retained unchanged in descendant lineages?",
+        "prompt": "What is an ancestral trait called in cladistics?",
+        "term": "Plesiomorphy (Ancestral Trait)",
+        "subtitle": "Primitive / Ancestral Character State"
+      },
+      {
+        "id": 27,
+        "category": "TRAIT STATES",
+        "cardType": "definition",
+        "emoji": "✨",
+        "question": "What is the formal cladistic term for a novel, newly evolved derived character state that differs from the ancestral condition?",
+        "prompt": "What is a derived / novel evolutionary trait called?",
+        "term": "Apomorphy (Derived Trait)",
+        "subtitle": "Novel / Evolved Character State"
+      },
+      {
+        "id": 28,
+        "category": "TRAIT STATES",
+        "cardType": "definition",
+        "emoji": "🤝",
+        "question": "What term describes a shared derived character present in an ancestor and shared by two or more descendant taxa, used as the primary evidence to define monophyletic clades?",
+        "prompt": "What are shared derived characters called in cladistics?",
+        "term": "Synapomorphy",
+        "subtitle": "Shared Derived Character (Defines Clades)"
+      },
+      {
+        "id": 29,
+        "category": "TRAIT STATES",
+        "cardType": "definition",
+        "emoji": "🦚",
+        "question": "What term describes a unique derived character state that belongs exclusively to a single terminal branch or individual species (e.g. feathers exclusive to birds)?",
+        "prompt": "What is a unique derived trait called?",
+        "term": "Autapomorphy",
+        "subtitle": "Unique Derived Character in a Single Lineage"
+      },
+      {
+        "id": 30,
+        "category": "TREE RECONSTRUCTION",
+        "cardType": "structure",
+        "emoji": "📊",
+        "question": "What grid of numbers (0 = ancestral state, 1 = derived state) is created by evolutionary biologists to systematically compare anatomical or genetic traits when building trees?",
+        "prompt": "What trait comparison table is this?",
+        "term": "Character Matrix",
+        "subtitle": "Binary Data Table for Cladistic Analysis"
+      },
+      {
+        "id": 31,
+        "category": "APPLIED PHYLOGENY",
+        "cardType": "situational",
+        "emoji": "🕵️‍♂️",
+        "question": "Forensic geneticists sequence DNA from confiscated ivory tusks to build a phylogenetic tree that pinpoints the exact national park where illegal elephant poaching occurred.",
+        "prompt": "What applied branch of evolutionary biology is this?",
+        "term": "Forensic Phylogenetics",
+        "subtitle": "DNA Lineage Tracing for Law Enforcement"
+      },
+      {
+        "id": 32,
+        "category": "APPLIED PHYLOGENY",
+        "cardType": "situational",
+        "emoji": "🦠",
+        "question": "Epidemiologists sequence viral genomes from patients across hospitals and construct a phylogenetic tree to trace the exact patient-zero origin and spread of a flu outbreak.",
+        "prompt": "What applied phylogenetic technique is this?",
+        "term": "Pathogen Outbreak Tracing",
+        "subtitle": "Molecular Epidemiology and Virus Tracking"
       }
     ]
   },
-
-  // =========================================================================
-  // TOPIC 3: CELL STRUCTURE AND FUNCTION
-  // =========================================================================
   {
-    id: 'zoology-3',
-    title: 'Cell Structure and Function',
-    badge: 'Topic 3',
-    description: 'Prokaryotes vs Eukaryotes, plasma membrane, endomembrane system, mitochondria, nucleus, and organelles.',
-    icon: '🔬',
-    cards: [
+    "id": "zoology-3",
+    "title": "Cell Structure and Function",
+    "badge": "Topic 3",
+    "description": "Prokaryotes vs Eukaryotes, plasma membrane, endomembrane system, mitochondria, nucleus, and organelles.",
+    "icon": "🔬",
+    "cards": [
       {
-        id: 1,
-        category: 'CELL TYPES',
-        emoji: '🦠',
-        situational: 'A microbiologist cultures bacteria and observes that their genetic material floats freely in a nucleoid without being wrapped inside a nuclear envelope.',
-        mainQuestion: 'What type of cell lacks a membrane-bound nucleus?',
-        prompt: 'What are structurally simple cells that lack a membrane-bound nucleus called?',
-        term: 'Prokaryotic Cells (Prokaryotes)',
-        subtitle: 'Cells Lacking a Membrane-Bound Nucleus',
-        studies: [
-          'Lack a membrane-bound nucleus and complex organelles',
-          'Structurally simple and microscopic',
-          'Divided into two domains: Bacteria and Archaea'
-        ],
-        takeaway: 'Prokaryotes (Bacteria and Archaea) lack a membrane-enclosed nucleus and internal compartmentalized organelles.'
+        "id": 1,
+        "category": "CELL TYPES",
+        "cardType": "definition",
+        "emoji": "🦠",
+        "question": "What are structurally simple, single-celled organisms that lack a membrane-bound nucleus and internal compartmentalized organelles?",
+        "prompt": "What type of cell is this?",
+        "term": "Prokaryotic Cells (Prokaryotes)",
+        "subtitle": "Cells Lacking a Membrane-Bound Nucleus"
       },
       {
-        id: 2,
-        category: 'PROKARYOTES',
-        emoji: '🧫',
-        situational: 'Under a microscope, a doctor observes rod-shaped *E. coli*, spherical *Streptococcus*, and spiral-shaped *Spirillum* bacteria.',
-        mainQuestion: 'What are the three common morphological shapes of bacteria?',
-        prompt: 'What are the three primary morphological shapes of bacterial cells?',
-        term: 'Three Shapes of Bacteria',
-        subtitle: 'Bacillus (Rod), Coccus (Spherical), Spirilla (Spiral)',
-        studies: [
-          'Bacillus = Rod-shaped',
-          'Coccus = Spherical / round',
-          'Spirilla = Spiral-shaped'
-        ],
-        takeaway: 'Bacteria are classified morphologically into three basic shapes: Bacillus (rod), Coccus (sphere), and Spirilla (spiral).'
+        "id": 2,
+        "category": "CELL TYPES",
+        "cardType": "analogy",
+        "emoji": "🏢",
+        "question": "Imagine a studio apartment where the bed, kitchen, cooking stove, and workspace all share one single open room with no dividing walls or interior doors.",
+        "prompt": "What type of simple cell structure is this?",
+        "term": "Prokaryotic Cells",
+        "subtitle": "Open Intracellular Organization"
       },
       {
-        id: 3,
-        category: 'PROKARYOTES',
-        emoji: '🌋',
-        situational: 'Scientists sample boiling volcanic springs and super-salty salt flats and discover ancient prokaryotes thriving under extreme heat and salinity.',
-        mainQuestion: 'What domain of prokaryotes specializes in extreme habitats?',
-        prompt: 'Which domain of prokaryotes includes extremophiles like halophiles, thermophiles, and methanogens?',
-        term: 'Domain Archaea',
-        subtitle: 'Extremophile Prokaryotes',
-        studies: [
-          'Halophiles (salt-loving environments)',
-          'Thermophiles (extremely hot thermal vents & springs)',
-          'Methanogens (methane-producing anaerobic habitats)'
-        ],
-        takeaway: 'Domain Archaea consists of specialized prokaryotes that thrive in extreme habitats (high heat, high salt, anaerobic conditions).'
+        "id": 3,
+        "category": "PROKARYOTES",
+        "cardType": "structure",
+        "emoji": "🧬",
+        "question": "Inside a prokaryotic bacterial cell, what is the open, irregular region called where its single circular chromosome of DNA floats freely without a membrane envelope?",
+        "prompt": "What is this open bacterial DNA region called?",
+        "term": "Nucleoid",
+        "subtitle": "Non-Membrane-Bound Region Containing Bacterial DNA"
       },
       {
-        id: 4,
-        category: 'CELL TYPES',
-        emoji: '🧬',
-        situational: 'A biology student examines cheek cells and plant leaf cells, observing a distinct nucleus, endoplasmic reticulum, and mitochondria in each cell.',
-        mainQuestion: 'What category of cells possesses a membrane-bound nucleus and organelles?',
-        prompt: 'What are complex cells containing a true membrane-bound nucleus and specialized organelles called?',
-        term: 'Eukaryotic Cells (Eukaryotes)',
-        subtitle: 'Cells Containing Membrane-Bound Nuclei & Organelles',
-        studies: [
-          'Belong to Domain Eukarya',
-          'Includes Protists, Fungi, Plants, and Animals',
-          'Contain membrane-bound nucleus, organelles, and plasma membrane'
-        ],
-        takeaway: 'Eukaryotic cells contain a membrane-enclosed nucleus and compartmentalized organelles that perform specialized metabolic tasks.'
+        "id": 4,
+        "category": "PROKARYOTES",
+        "cardType": "structure",
+        "emoji": "🧫",
+        "question": "What are the 3 primary morphological shapes of bacterial cells observed under a microscope?",
+        "subtext": "Bacillus (rod-shaped), Coccus (spherical), Spirilla (spiral-shaped)",
+        "prompt": "What are the three fundamental shapes of bacteria?",
+        "term": "Bacillus • Coccus • Spirilla",
+        "subtitle": "Rod • Sphere • Spiral Bacterial Shapes"
       },
       {
-        id: 5,
-        category: 'PLASMA MEMBRANE',
-        emoji: '🛡️',
-        situational: 'The outer boundary of an animal cell consists of two sheets of phospholipid molecules with hydrophilic heads facing water and hydrophobic tails tucked inside.',
-        mainQuestion: 'What is the primary lipid structure of the cell membrane?',
-        prompt: 'What double-layered lipid structure forms the outer protective barrier of eukaryotic cells?',
-        term: 'Phospholipid Bilayer',
-        subtitle: 'Double Layer of Phospholipids with Embedded Proteins',
-        studies: [
-          'Separates cytoplasm from extracellular environment',
-          'Hydrophilic phosphate heads face watery exterior and interior',
-          'Embedded proteins regulate molecular transit and signaling'
-        ],
-        takeaway: 'The phospholipid bilayer forms a fluid, protective double-membrane barrier regulating what enters and exits the cell.'
+        "id": 5,
+        "category": "PROKARYOTES",
+        "cardType": "definition",
+        "emoji": "🌋",
+        "question": "Which domain of prokaryotes consists of specialized extremophiles that thrive in harsh habitats like boiling thermal vents (thermophiles) and hyper-salty flats (halophiles)?",
+        "prompt": "What domain of extremophile prokaryotes is this?",
+        "term": "Domain Archaea",
+        "subtitle": "Extremophile Prokaryotes"
       },
       {
-        id: 6,
-        category: 'PLASMA MEMBRANE',
-        emoji: '🚪',
-        situational: 'The cell membrane allows vital glucose, amino acids, and oxygen to enter while blocking harmful toxins and preventing cell contents from leaking out.',
-        mainQuestion: 'What property allows the membrane to choose what passes through?',
-        prompt: 'What property of the plasma membrane allows necessary nutrients to pass while blocking harmful substances?',
-        term: 'Selectively Permeable Membrane',
-        subtitle: 'Regulated Molecular Passage for Homeostasis',
-        studies: [
-          'Allows necessary nutrients and gases (sugars, ions, O2) to pass',
-          'Prevents passage of harmful and large foreign substances',
-          'Maintains internal cellular homeostasis and integrity'
-        ],
-        takeaway: 'Selective permeability is the membrane\'s ability to regulate transport, keeping internal conditions stable and balanced.'
+        "id": 6,
+        "category": "CELL TYPES",
+        "cardType": "definition",
+        "emoji": "🔬",
+        "question": "What are complex cells containing a true membrane-enclosed nucleus and specialized, compartmentalized organelles (found in protists, fungi, plants, and animals)?",
+        "prompt": "What category of cells is this?",
+        "term": "Eukaryotic Cells (Eukaryotes)",
+        "subtitle": "Cells Containing Membrane-Bound Nuclei & Organelles"
       },
       {
-        id: 7,
-        category: 'PLASMA MEMBRANE',
-        emoji: '📡',
-        situational: 'A hormone released from the brain binds to a specific protein on a liver cell membrane, triggering the cell to release glucose into the bloodstream.',
-        mainQuestion: 'How do cells receive and respond to chemical signals from their environment?',
-        prompt: 'What function do embedded membrane proteins serve when acting as receptors for signaling molecules?',
-        term: 'Intercellular Communication (Receptors)',
-        subtitle: 'Membrane Receptors & Signal Transduction',
-        studies: [
-          'Proteins embedded in the membrane act as receptors',
-          'Bind signaling molecules (hormones, neurotransmitters)',
-          'Enables cells to communicate and respond to environmental changes'
-        ],
-        takeaway: 'Embedded membrane receptor proteins detect external signaling molecules to coordinate cellular responses.'
+        "id": 7,
+        "category": "CELL TYPES",
+        "cardType": "analogy",
+        "emoji": "🏰",
+        "question": "Imagine a luxury mansion with dedicated partitioned rooms: a chef's kitchen, a private library, an electrical generator room, and an executive office, each with closed doors.",
+        "prompt": "What type of compartmentalized cell is this?",
+        "term": "Eukaryotic Cells",
+        "subtitle": "Compartmentalized Cellular Architecture"
       },
       {
-        id: 8,
-        category: 'CYTOPLASM',
-        emoji: '🧪',
-        situational: 'Nutrients and enzymes dissolve in a semi-fluid jelly inside the cell membrane where glucose breakdown (glycolysis) and protein assembly take place.',
-        mainQuestion: 'What is the gelatinous fluid matrix filling the cell outside the nucleus?',
-        prompt: 'What is the gelatinous material inside the cell membrane (containing cytosol) that houses organelles called?',
-        term: 'Cytoplasm (Cytosol)',
-        subtitle: 'Gelatinous Intracellular Matrix & Metabolic Site',
-        studies: [
-          'Gelatinous fluid located inside membrane but outside nucleus',
-          'Facilitates essential metabolic processes and protein synthesis',
-          'Allows movement and transport of materials and organelles'
-        ],
-        takeaway: 'The cytoplasm is the gelatinous medium where cellular organelles reside and vital metabolic reactions occur.'
+        "id": 8,
+        "category": "PLASMA MEMBRANE",
+        "cardType": "definition",
+        "emoji": "🛡️",
+        "question": "What is the dynamic outer boundary of the cell that encloses the cytoplasm, maintains cellular integrity, and regulates molecular transport?",
+        "prompt": "What outer cellular boundary is this?",
+        "term": "Plasma Membrane (Cell Membrane)",
+        "subtitle": "Outer Cellular Boundary and Permeability Barrier"
       },
       {
-        id: 9,
-        category: 'THE NUCLEUS',
-        emoji: '👑',
-        situational: 'The master blueprint containing chromosomes and DNA instructions for building all proteins is locked securely inside a double-membrane envelope.',
-        mainQuestion: 'What organelle serves as the genetic command center of the cell?',
-        prompt: 'What double-membrane organelle stores genetic information (DNA) and directs protein synthesis?',
-        term: 'Nucleus',
-        subtitle: 'Genetic Command Center (DNA → RNA → Protein)',
-        studies: [
-          'Surrounded by a double membrane (nuclear envelope with pores)',
-          'Stores chromosomes and genetic information (DNA)',
-          'Directs cellular activities through transcription'
-        ],
-        takeaway: 'The nucleus is the eukaryotic control center that houses genomic DNA and coordinates protein synthesis blueprints.'
+        "id": 9,
+        "category": "PLASMA MEMBRANE",
+        "cardType": "analogy",
+        "emoji": "🚧",
+        "question": "Think of a high-tech perimeter security fence with automated checkpoints surrounding an entire industrial facility, deciding who enters and exits.",
+        "prompt": "What cellular boundary acts like this guarded fence?",
+        "term": "Plasma Membrane",
+        "subtitle": "The Cell's Protective Security Boundary"
       },
       {
-        id: 10,
-        category: 'THE NUCLEUS',
-        emoji: '🎾',
-        situational: 'Inside the nucleus, a dark, dense spherical structure actively produces ribosomal RNA (rRNA) and combines it with proteins to form ribosome subunits.',
-        mainQuestion: 'Where inside the nucleus are ribosome parts manufactured?',
-        prompt: 'What dense region inside the nucleus produces ribosomal RNA (rRNA) and ribosome subunits?',
-        term: 'Nucleolus',
-        subtitle: 'Site of Ribosomal RNA (rRNA) & Ribosome Assembly',
-        studies: [
-          'Located inside the nucleus',
-          'Synthesizes ribosomal RNA (rRNA)',
-          'Assembles ribosome subunits before export to cytoplasm'
-        ],
-        takeaway: 'The nucleolus is the specialized nuclear region responsible for synthesizing rRNA and assembling ribosome subunits.'
+        "id": 10,
+        "category": "PLASMA MEMBRANE",
+        "cardType": "structure",
+        "emoji": "🥪",
+        "question": "What double-layered lipid arrangement forms the structural core of the cell membrane, with water-loving (hydrophilic) phosphate heads facing outward and water-hating (hydrophobic) fatty acid tails hidden inside?",
+        "prompt": "What double lipid structure is this?",
+        "term": "Phospholipid Bilayer",
+        "subtitle": "Double Layer of Amphipathic Phospholipids"
       },
       {
-        id: 11,
-        category: 'ENERGY ORGANELLES',
-        emoji: '⚡',
-        situational: 'Muscle cells require huge amounts of energy to contract, using oxygen to burn glucose and generate thousands of ATP molecules inside folded inner-membrane cristae.',
-        mainQuestion: 'Which organelle specializes in aerobic cellular respiration and making ATP?',
-        prompt: 'What organelle is known as the "powerhouse of the cell", producing ATP through aerobic respiration?',
-        term: 'Mitochondria (Singular: Mitochondrion)',
-        subtitle: 'Powerhouse of the Cell (Aerobic Respiration & ATP)',
-        studies: [
-          'Aerobic respiration: C6H12O6 + 6O2 ➔ 6CO2 + 6H2O + ATP',
-          'Extracts high amounts of usable chemical energy from glucose',
-          'Abundant in high-energy cells like muscle and liver'
-        ],
-        takeaway: 'Mitochondria perform aerobic cellular respiration, converting glucose and oxygen into cellular energy (ATP).'
+        "id": 11,
+        "category": "PLASMA MEMBRANE",
+        "cardType": "definition",
+        "emoji": "🚪",
+        "question": "What property of the plasma membrane allows vital nutrients (glucose, amino acids) and respiratory gases ($O_2, CO_2$) to pass while blocking harmful toxins and large polar molecules?",
+        "prompt": "What transport regulatory property is this?",
+        "term": "Selective Permeability",
+        "subtitle": "Regulated Molecular Transit for Homeostasis"
       },
       {
-        id: 12,
-        category: 'ENDOMEMBRANE SYSTEM',
-        emoji: '🏗️',
-        situational: 'A network of flattened membranes studded with thousands of tiny ribosomes folds and modifies newly synthesized proteins into glycoproteins for export.',
-        mainQuestion: 'Which endoplasmic reticulum is studded with ribosomes for protein synthesis?',
-        prompt: 'What organelle is studded with ribosomes on its cytoplasmic side and synthesizes and modifies proteins?',
-        term: 'Rough Endoplasmic Reticulum (Rough ER)',
-        subtitle: 'Ribosome-Studded ER for Protein Synthesis & Folding',
-        studies: [
-          'Studded with ribosomes on cytoplasmic surface',
-          'Synthesizes and modifies proteins (protein anabolism)',
-          'Adds sugar chains to proteins to create glycoproteins'
-        ],
-        takeaway: 'Rough ER is studded with ribosomes and specializes in synthesizing, folding, and modifying secretory proteins.'
+        "id": 12,
+        "category": "PLASMA MEMBRANE",
+        "cardType": "definition",
+        "emoji": "📡",
+        "question": "What proteins embedded on the outer surface of the plasma membrane act as biological antennas to bind hormones, neurotransmitters, and signaling molecules from other cells?",
+        "prompt": "What membrane signaling components are these?",
+        "term": "Membrane Receptor Proteins",
+        "subtitle": "Intercellular Communication and Signal Transduction"
       },
       {
-        id: 13,
-        category: 'ENDOMEMBRANE SYSTEM',
-        emoji: '🧈',
-        situational: 'In liver cells, a smooth membrane network synthesizes phospholipids, detoxifies alcohol and drugs, and stores calcium ions without any ribosomes attached.',
-        mainQuestion: 'Which endoplasmic reticulum lacks ribosomes and specializes in lipids and detoxification?',
-        prompt: 'What organelle lacks ribosomes and produces lipids, detoxifies drugs, and stores calcium ions (Ca2+)?',
-        term: 'Smooth Endoplasmic Reticulum (Smooth ER)',
-        subtitle: 'Lipid Synthesis, Drug Detoxification, & Calcium Storage',
-        studies: [
-          'Lacks ribosomes on its surface',
-          'Synthesizes lipids, phospholipids, and steroid hormones',
-          'Detoxifies drugs in the liver and stores Ca2+ in muscle cells'
-        ],
-        takeaway: 'Smooth ER lacks ribosomes and is dedicated to synthesizing lipids, detoxifying harmful substances, and storing calcium.'
+        "id": 13,
+        "category": "PLASMA MEMBRANE",
+        "cardType": "concept",
+        "emoji": "🌊",
+        "question": "What model describes the plasma membrane as a dynamic, flexible fluid lipid bilayer embedded with a mosaic of drifting proteins, glycoproteins, and cholesterol?",
+        "prompt": "What famous biological membrane model is this?",
+        "term": "Fluid Mosaic Model",
+        "subtitle": "Singer & Nicolson Model of Membrane Structure"
       },
       {
-        id: 14,
-        category: 'ENDOMEMBRANE SYSTEM',
-        emoji: '📦',
-        situational: 'Transport vesicles arrive at the *cis face* of a stack of 3–20 curved, flattened sacs ("hollow pancakes"), where proteins are labeled, packaged into vesicles, and shipped out from the *trans face*.',
-        mainQuestion: 'What organelle packages and distributes cellular products for export?',
-        prompt: 'What organelle consisting of flattened saccules packages materials for export and secretion?',
-        term: 'Golgi Apparatus',
-        subtitle: 'Cellular Packaging & Shipping Center',
-        studies: [
-          'Consists of 3–20 flattened, curved saccules (stack of pancakes)',
-          'Receives vesicles from ER on *cis face*',
-          'Packages and ships vesicles from *trans face* for secretion (exocytosis)'
-        ],
-        takeaway: 'The Golgi apparatus modifies, sorts, and packages proteins and lipids into vesicles for transport inside or outside the cell.'
+        "id": 14,
+        "category": "CYTOPLASM",
+        "cardType": "definition",
+        "emoji": "🧪",
+        "question": "What is the semi-fluid, gelatinous matrix filling the cell interior between the nucleus and plasma membrane where metabolic reactions and glycolysis occur?",
+        "prompt": "What intracellular fluid matrix is this?",
+        "term": "Cytoplasm (Cytosol)",
+        "subtitle": "Gelatinous Intracellular Matrix"
       },
       {
-        id: 15,
-        category: 'VESICLES',
-        emoji: '🗑️',
-        situational: 'A white blood cell engulfs an invading bacterium and fuses it with an acidic digestive vesicle whose powerful enzymes break the bacterium down into harmless molecules.',
-        mainQuestion: 'What digestive organelle destroys cellular debris and pathogens?',
-        prompt: 'What organelle contains powerful digestive enzymes responsible for intracellular digestion and debris breakdown?',
-        term: 'Lysosomes',
-        subtitle: 'Intracellular Digestion & Waste Breakdown',
-        studies: [
-          'Vesicles containing powerful hydrolytic digestive enzymes',
-          'Breaks down carbohydrates, lipids, proteins, and nucleic acids',
-          'Destroys engulfed bacteria, foreign debris, and worn-out organelles'
-        ],
-        takeaway: 'Lysosomes contain acidic digestive enzymes that break down cellular waste, macromolecules, and engulfed pathogens.'
+        "id": 15,
+        "category": "CYTOPLASM",
+        "cardType": "analogy",
+        "emoji": "🍮",
+        "question": "Imagine the clear gelatin in a fruit jelly mold that holds all the sliced fruits, strawberries, and grapes (organelles) suspended firmly in place.",
+        "prompt": "What cellular medium acts like this suspended jelly?",
+        "term": "Cytoplasm (Cytosol)",
+        "subtitle": "Suspension Medium for Cellular Organelles"
       },
       {
-        id: 16,
-        category: 'VESICLES',
-        emoji: '🧪',
-        situational: 'An enzyme-filled vesicle in a kidney cell breaks down long-chain fatty acids and neutralizes toxic hydrogen peroxide produced during metabolism.',
-        mainQuestion: 'What enzyme-filled vesicle breaks down fatty acids and toxic byproducts?',
-        prompt: 'What enzyme-filled vesicle breaks down amino acids, fatty acids, and toxic substances?',
-        term: 'Peroxisomes',
-        subtitle: 'Enzyme-Filled Vesicles for Fatty Acid Oxidation & Detox',
-        studies: [
-          'Enzyme-filled vesicle that oxidizes fatty acids and amino acids',
-          'Neutralizes toxic metabolic byproducts (e.g. hydrogen peroxide)',
-          'Essential for metabolic detoxification in liver and kidney cells'
-        ],
-        takeaway: 'Peroxisomes are metabolic vesicles containing oxidative enzymes to break down fatty acids and neutralize toxins.'
+        "id": 16,
+        "category": "THE NUCLEUS",
+        "cardType": "definition",
+        "emoji": "👑",
+        "question": "What is the prominent double-membrane organelle that securely stores genetic blueprints (DNA chromosomes) and directs all cellular growth, reproduction, and protein synthesis?",
+        "prompt": "What organelle is the genetic command center of the cell?",
+        "term": "Nucleus",
+        "subtitle": "Genetic Command Center (Houses Genomic DNA)"
       },
       {
-        id: 17,
-        category: 'VESICLES',
-        emoji: '💧',
-        situational: 'A cell forms a membrane-bound bubble to isolate excess water, store nutrients, or transport waste materials to the cell perimeter.',
-        mainQuestion: 'What fluid-filled sacs store and isolate materials in cells?',
-        prompt: 'What fluid-filled organelles isolate wastes, store nutrients, or transport materials in cells?',
-        term: 'Vacuoles & Vesicles',
-        subtitle: 'Storage, Transport, & Waste Isolation Sacs',
-        studies: [
-          'Small membrane-enclosed sac-like structures',
-          'Store water, nutrients, and cellular products',
-          'Isolate or dispose of waste and toxic materials'
-        ],
-        takeaway: 'Vacuoles and vesicles are membrane-bound sacs dedicated to storage, intracellular transport, and waste isolation.'
+        "id": 17,
+        "category": "THE NUCLEUS",
+        "cardType": "analogy",
+        "emoji": "🏛️",
+        "question": "Imagine the central city hall or executive headquarters of a manufacturing city where all the master blueprints, laws, and architect designs are locked securely inside a vault.",
+        "prompt": "What vital cellular organelle is this?",
+        "term": "Nucleus",
+        "subtitle": "The Cell's Master Blueprint Vault"
       },
       {
-        id: 18,
-        category: 'NON-MEMBRANE ORGANELLES',
-        emoji: '🧵',
-        situational: 'Tiny molecular machines either floating freely in the cytosol or attached to the Rough ER read messenger RNA strands and assemble amino acids into polypeptide chains.',
-        mainQuestion: 'What non-membrane structures synthesize proteins in all living cells?',
-        prompt: 'What cellular structures are responsible for assembling polypeptide chains during protein synthesis?',
-        term: 'Ribosomes',
-        subtitle: 'Protein Synthesis Factories (Free or ER-Bound)',
-        studies: [
-          'Composed of ribosomal RNA (rRNA) and proteins',
-          'Can be free-floating in cytoplasm or bound to Rough ER',
-          'Assemble amino acids into polypeptide chains (proteins)'
-        ],
-        takeaway: 'Ribosomes translate mRNA genetic codes into amino acid polypeptide chains during protein synthesis.'
+        "id": 18,
+        "category": "THE NUCLEUS",
+        "cardType": "situational",
+        "emoji": "🔬",
+        "question": "A molecular geneticist uses a fluorescent blue dye (DAPI) to stain chromosomes and spots them safely encapsulated inside this rounded, double-membrane compartment where transcription takes place.",
+        "prompt": "What organelle is the geneticist observing?",
+        "term": "Nucleus",
+        "subtitle": "Site of DNA Storage and mRNA Transcription"
       },
       {
-        id: 19,
-        category: 'NON-MEMBRANE ORGANELLES',
-        emoji: '⚓',
-        situational: 'During animal cell division (mitosis), barrel-shaped microtubule cylinders organize the mitotic spindle fibers to pull replicated chromosomes apart.',
-        mainQuestion: 'What animal organelle serves as an anchor for the cytoskeleton and spindle fibers?',
-        prompt: 'What barrel-shaped organelle (not found in most plant cells) serves as an anchor for the cytoskeleton and cell division?',
-        term: 'Centriole',
-        subtitle: 'Cytoskeleton Anchor & Mitotic Spindle Organizer',
-        studies: [
-          'Composed of arranged microtubule triplets',
-          'Present in animal cells; absent in most plant cells',
-          'Anchors the cytoskeleton and organizes spindle fibers during mitosis'
-        ],
-        takeaway: 'Centrioles organize microtubule fibers during animal cell division and act as structural anchor points.'
+        "id": 19,
+        "category": "THE NUCLEUS",
+        "cardType": "structure",
+        "emoji": "📦",
+        "question": "Inside this organelle, what do you find suspended within the nucleoplasm?",
+        "subtext": "Chromatin (DNA wrapped around histone proteins), Nucleolus, and Nuclear Matrix",
+        "prompt": "What major structures are housed inside the Nucleus?",
+        "term": "Chromatin and Nucleolus",
+        "subtitle": "Intranuclear Components"
       },
       {
-        id: 20,
-        category: 'CYTOSKELETON',
-        emoji: '🕸️',
-        situational: 'A network of microscopic protein filaments (microfilaments, intermediate filaments, microtubules) crisscrosses the cell, maintaining its shape and moving organelles around.',
-        mainQuestion: 'What internal protein network supports cell structure and movement?',
-        prompt: 'What internal structural component reinforces cell shape, provides internal organization, and facilitates movement?',
-        term: 'The Cytoskeleton',
-        subtitle: 'Internal Protein Scaffolding for Shape & Motility',
-        studies: [
-          'Contributes to cell shape and mechanical strength',
-          'Maintains internal organization of organelles',
-          'Enables intracellular transport and whole-cell motility'
-        ],
-        takeaway: 'The cytoskeleton is a dynamic internal protein scaffolding that provides mechanical support, organelle organization, and motility.'
+        "id": 20,
+        "category": "THE NUCLEUS",
+        "cardType": "structure",
+        "emoji": "🚪",
+        "question": "What double-membrane barrier perforated with small channel pores wraps around the nucleus to regulate the entry and exit of proteins, RNA, and macromolecules?",
+        "prompt": "What is this protective nuclear boundary called?",
+        "term": "Nuclear Envelope & Nuclear Pores",
+        "subtitle": "Perforated Double Membrane Enclosing the Nucleus"
       },
       {
-        id: 21,
-        category: 'SURFACE PROJECTIONS',
-        emoji: '🏊',
-        situational: 'A single sperm cell swims using a whip-like tail, while cells lining the human airway use waving hairs to sweep mucus and trapped dust upward.',
-        mainQuestion: 'What surface structures enable cellular movement and increase surface area?',
-        prompt: 'What surface projections increase surface area and produce cellular movement?',
-        term: 'Cilia, Flagella, and Microvilli',
-        subtitle: 'Surface Projections for Locomotion & Absorption',
-        studies: [
-          'Cilia (short, numerous hair-like projections for sweeping fluids)',
-          'Flagella (long, whip-like tails for swimming motility)',
-          'Microvilli (finger-like folds that increase surface area for absorption)'
-        ],
-        takeaway: 'Cilia and flagella provide cellular locomotion and fluid movement, while microvilli expand cell surface area for absorption.'
+        "id": 21,
+        "category": "THE NUCLEOLUS",
+        "cardType": "definition",
+        "emoji": "🎾",
+        "question": "What dark, dense spherical structure located inside the nucleus is responsible for producing ribosomal RNA (rRNA) and assembling ribosome subunits?",
+        "prompt": "What specialized intranuclear structure is this?",
+        "term": "Nucleolus",
+        "subtitle": "Site of Ribosomal RNA (rRNA) & Ribosome Assembly"
       },
       {
-        id: 22,
-        category: 'GENE EXPRESSION',
-        emoji: '➡️',
-        situational: 'DNA code in the nucleus is transcribed into messenger RNA, which travels to a ribosome in the cytoplasm to be translated into a functional enzyme.',
-        mainQuestion: 'What is the primary flow of genetic information in living cells?',
-        prompt: 'What is the universal pathway of protein synthesis from genetic instructions?',
-        term: 'Central Dogma (DNA → RNA → Protein)',
-        subtitle: 'Genetic Information Flow & Protein Synthesis',
-        studies: [
-          'DNA (storage of genetic blueprint in nucleus)',
-          'RNA (transcription of message via mRNA)',
-          'Protein (translation of amino acids at ribosomes)'
-        ],
-        takeaway: 'Genetic information flows from DNA (transcription) to RNA and then to Protein (translation) to carry out cellular functions.'
+        "id": 22,
+        "category": "THE NUCLEOLUS",
+        "cardType": "analogy",
+        "emoji": "🤖",
+        "question": "Imagine a dedicated machine shop inside corporate headquarters whose only job is to build the robotic worker machines (ribosomes) before shipping them to the factory floor.",
+        "prompt": "What intranuclear workshop is this?",
+        "term": "Nucleolus",
+        "subtitle": "Ribosome Assembly Workshop"
       },
       {
-        id: 23,
-        category: 'ENDOMEMBRANE FLOW',
-        emoji: '🚚',
-        situational: 'Insulin is synthesized on the Rough ER, packaged into a transport vesicle, modified in the Golgi, and packaged into a secretory vesicle that fuses with the plasma membrane to release insulin into the blood.',
-        mainQuestion: 'What pathway do secretory proteins follow from synthesis to release?',
-        prompt: 'What is the sequential route taken by proteins destined for secretion outside the cell?',
-        term: 'Secretory Pathway (ER → Golgi → Vesicle → Exocytosis)',
-        subtitle: 'Protein Modification, Packaging, & Secretion Route',
-        studies: [
-          'Synthesis on Rough ER ➔ transport vesicle',
-          'Processing in Golgi apparatus (*cis* to *trans* face)',
-          'Shipment in secretory vesicle ➔ fusion with plasma membrane (exocytosis)'
-        ],
-        takeaway: 'Secretory proteins travel sequentially: Rough ER ➔ Transport Vesicle ➔ Golgi Apparatus ➔ Secretory Vesicle ➔ Exocytosis.'
+        "id": 23,
+        "category": "THE NUCLEOLUS",
+        "cardType": "structure",
+        "emoji": "🧬",
+        "question": "Inside this nuclear structure, what two components are synthesized and combined together to assemble large and small ribosome subunits?",
+        "subtext": "Ribosomal RNA (rRNA) + Ribosomal Proteins",
+        "prompt": "What is manufactured inside the Nucleolus?",
+        "term": "Ribosome Subunits (rRNA + Proteins)",
+        "subtitle": "Assembled in Nucleolus ➔ Exported to Cytoplasm"
       },
       {
-        id: 24,
-        category: 'CELL INTEGRITY',
-        emoji: '⚠️',
-        situational: 'A toxin creates holes in the phospholipid bilayer, causing essential ions and enzymes to leak out while water floods in, destroying the cell.',
-        mainQuestion: 'What happens when the plasma membrane loses its barrier function?',
-        prompt: 'What is the consequence of losing the plasma membrane barrier function in a cell?',
-        term: 'Loss of Membrane Barrier & Cell Death',
-        subtitle: 'Disruption of Homeostasis Leading to Cell Lysis',
-        studies: [
-          'Loss of selective permeability barrier',
-          'Compromised cellular homeostasis and ion balance',
-          'Leads to cellular swelling, lysis, and death'
-        ],
-        takeaway: 'Maintaining plasma membrane integrity is vital for homeostasis; barrier failure causes rapid cell lysis and death.'
+        "id": 24,
+        "category": "CENTRAL DOGMA",
+        "cardType": "concept",
+        "emoji": "🔄",
+        "question": "What fundamental biological doctrine explains the flow of genetic information: DNA is transcribed into mRNA inside the nucleus, and mRNA is translated into Protein on ribosomes?",
+        "prompt": "What is this core biological process called?",
+        "term": "Central Dogma of Molecular Biology",
+        "subtitle": "DNA ➔ mRNA (Transcription) ➔ Protein (Translation)"
       },
       {
-        id: 25,
-        category: 'COMPARATIVE CYTOLOGY',
-        emoji: '⚖️',
-        situational: 'A student compares a bacterium to a human liver cell under a microscope to distinguish between prokaryotes and eukaryotes.',
-        mainQuestion: 'What is the fundamental difference between prokaryotic and eukaryotic cells?',
-        prompt: 'What is the primary structural difference between prokaryotic and eukaryotic cells?',
-        term: 'Prokaryotic vs. Eukaryotic Cells',
-        subtitle: 'Absence vs. Presence of Membrane-Bound Nucleus & Organelles',
-        studies: [
-          'Prokaryotes: No true nucleus, no membrane-bound organelles, circular DNA',
-          'Eukaryotes: True nucleus, membrane-bound organelles (ER, Golgi, mitochondria), linear DNA',
-          'Prokaryotes are simple; Eukaryotes are compartmentalized'
-        ],
-        takeaway: 'Prokaryotes lack a membrane-enclosed nucleus and organelles; Eukaryotes possess a defined nucleus and specialized internal organelles.'
+        "id": 25,
+        "category": "RIBOSOMES",
+        "cardType": "definition",
+        "emoji": "🧵",
+        "question": "What are the tiny non-membrane-bound molecular complexes made of rRNA and proteins that carry out protein synthesis by translating mRNA codons into amino acid chains?",
+        "prompt": "What protein-making molecular machines are these?",
+        "term": "Ribosomes",
+        "subtitle": "Sites of Protein Synthesis (Translation)"
       },
       {
-        id: 26,
-        category: 'SUMMARY CONCEPTS',
-        emoji: '🧩',
-        situational: 'All physiological functions of animals—such as muscle contraction, nerve firing, digestion, and immunity—are carried out by coordinated eukaryotic cells.',
-        mainQuestion: 'What is the fundamental structural and functional unit of all animal life?',
-        prompt: 'What is the basic structural and functional unit of all animal organisms?',
-        term: 'The Eukaryotic Animal Cell',
-        subtitle: 'The Fundamental Unit of Animal Life',
-        studies: [
-          'Basic structural building block of tissues and organs',
-          'Site of all essential metabolic and genetic processes',
-          'Organelle coordination drives animal physiology and survival'
-        ],
-        takeaway: 'The eukaryotic animal cell is the basic structural and functional unit that drives all physiological processes in animals.'
+        "id": 26,
+        "category": "RIBOSOMES",
+        "cardType": "analogy",
+        "emoji": "🧑‍🍳",
+        "question": "Think of tiny hardworking factory chefs who read mRNA recipe cards and stitch amino acid ingredients together into complete protein chains.",
+        "prompt": "What cellular protein builders are these?",
+        "term": "Ribosomes",
+        "subtitle": "Molecular Assembly Workers"
+      },
+      {
+        "id": 27,
+        "category": "RIBOSOMES",
+        "cardType": "structure",
+        "emoji": "📍",
+        "question": "In eukaryotic cells, where are ribosomes located? Contrast Free Ribosomes versus Bound Ribosomes.",
+        "subtext": "Free: Float in cytosol (make internal proteins); Bound: Attached to Rough ER (make export / membrane proteins)",
+        "prompt": "Where are ribosomes located in the cell?",
+        "term": "Free Ribosomes vs. Bound Ribosomes",
+        "subtitle": "Cytosol vs. Rough Endoplasmic Reticulum"
+      },
+      {
+        "id": 28,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "definition",
+        "emoji": "🏗️",
+        "question": "What organelle is an extensive network of flattened membranous sacs studded with ribosomes on its outer surface that synthesizes, folds, and modifies proteins for export?",
+        "prompt": "What ribosome-studded organelle is this?",
+        "term": "Rough Endoplasmic Reticulum (Rough ER)",
+        "subtitle": "Ribosome-Studded ER for Protein Synthesis & Folding"
+      },
+      {
+        "id": 29,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "analogy",
+        "emoji": "📦",
+        "question": "Imagine an industrial assembly line conveyor belt studded with robotic workers that folds, modifies, and packs newly made proteins into transport vesicles for shipping.",
+        "prompt": "What organelle operates like this studded assembly line?",
+        "term": "Rough Endoplasmic Reticulum",
+        "subtitle": "Protein Assembly and Folding Factory"
+      },
+      {
+        "id": 30,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "structure",
+        "emoji": "🔎",
+        "question": "What gives the Rough Endoplasmic Reticulum its rough, bumpy appearance when viewed under an electron microscope?",
+        "prompt": "What structures are attached to the cytoplasmic surface of Rough ER?",
+        "term": "Attached Ribosomes",
+        "subtitle": "Surface-Bound Protein Synthesis Complexes"
+      },
+      {
+        "id": 31,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "definition",
+        "emoji": "🧈",
+        "question": "What organelle consists of a network of smooth tubular membranes lacking ribosomes that synthesizes lipids, detoxifies drugs and alcohol, and stores calcium ions (Ca2+)?",
+        "prompt": "What ribosome-free endoplasmic reticulum is this?",
+        "term": "Smooth Endoplasmic Reticulum (Smooth ER)",
+        "subtitle": "Lipid Synthesis, Drug Detoxification, & Calcium Storage"
+      },
+      {
+        "id": 32,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "analogy",
+        "emoji": "🧪",
+        "question": "Think of an oil and grease refinery combined with a toxic waste neutralization station and a calcium storage warehouse for muscle contractions.",
+        "prompt": "What organelle fulfills these lipid and detox roles?",
+        "term": "Smooth Endoplasmic Reticulum",
+        "subtitle": "Lipid Factory and Hazardous Waste Neutralizer"
+      },
+      {
+        "id": 33,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "situational",
+        "emoji": "🍷",
+        "question": "In human liver cells, this organelle proliferates and expands rapidly when exposed to high levels of alcohol, barbiturates, or toxins to accelerate metabolic breakdown.",
+        "prompt": "What organelle expands to detoxify drugs in liver cells?",
+        "term": "Smooth Endoplasmic Reticulum",
+        "subtitle": "Hepatic Drug Detoxification Network"
+      },
+      {
+        "id": 34,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "definition",
+        "emoji": "🥞",
+        "question": "What organelle consists of a stack of 3–20 flattened, curved membranous sacs that receives, chemically modifies, sorts, and packages proteins into vesicles for secretion?",
+        "prompt": "What cellular packaging and shipping center is this?",
+        "term": "Golgi Apparatus",
+        "subtitle": "Cellular Packaging and Shipping Center"
+      },
+      {
+        "id": 35,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "analogy",
+        "emoji": "📬",
+        "question": "Think of the central post office or Amazon distribution center where packages arrive, receive custom barcodes and address tags, and get loaded into delivery vans.",
+        "prompt": "What organelle is the cell's post office?",
+        "term": "Golgi Apparatus",
+        "subtitle": "Protein Sorting and Secretion Center"
+      },
+      {
+        "id": 36,
+        "category": "ENDOMEMBRANE SYSTEM",
+        "cardType": "structure",
+        "emoji": "🚢",
+        "question": "Which face of the Golgi apparatus receives transport vesicles arriving from the ER (receiving dock), and which face ships finished vesicles out toward the plasma membrane (shipping dock)?",
+        "subtext": "Cis face = receiving face facing ER; Trans face = shipping face facing plasma membrane",
+        "prompt": "What are the two functional faces of the Golgi apparatus?",
+        "term": "Cis Face (Receiving) vs. Trans Face (Shipping)",
+        "subtitle": "Directional Polarity of Golgi Saccules"
+      },
+      {
+        "id": 37,
+        "category": "VESICLES",
+        "cardType": "definition",
+        "emoji": "🗑️",
+        "question": "What are membrane-bound digestive vesicles containing powerful acidic hydrolytic enzymes that break down worn-out organelles, cellular debris, and engulfed bacteria?",
+        "prompt": "What digestive waste-disposal organelle is this?",
+        "term": "Lysosomes",
+        "subtitle": "Acidic Digestive and Waste Disposal Vesicles"
+      },
+      {
+        "id": 38,
+        "category": "VESICLES",
+        "cardType": "analogy",
+        "emoji": "♻️",
+        "question": "Imagine the city's recycling crew, garbage incinerator, and hazardous demolition squad that dissolves old worn-out machinery back into raw usable materials.",
+        "prompt": "What organelle acts as the cell's recycling crew?",
+        "term": "Lysosomes",
+        "subtitle": "Intracellular Digestion and Autophagy"
+      },
+      {
+        "id": 39,
+        "category": "VESICLES",
+        "cardType": "situational",
+        "emoji": "🛡️",
+        "question": "A human white blood cell engulfs an invading disease-causing bacterium via phagocytosis and fuses the bacterial bubble with this acidic vesicle to dissolve and kill the germ.",
+        "prompt": "What organelle dissolves the engulfed bacterium?",
+        "term": "Lysosomes",
+        "subtitle": "Pathogen Destruction via Acid Hydrolases"
+      },
+      {
+        "id": 40,
+        "category": "VESICLES",
+        "cardType": "definition",
+        "emoji": "🧪",
+        "question": "What membrane-bound vesicles contain oxidative enzymes (such as catalase) that break down fatty acids and neutralize dangerous hydrogen peroxide ($H_2O_2$) into water and oxygen?",
+        "prompt": "What oxidative detox organelle is this?",
+        "term": "Peroxisomes",
+        "subtitle": "Breakdown of Fatty Acids & Hydrogen Peroxide"
+      },
+      {
+        "id": 41,
+        "category": "VESICLES",
+        "cardType": "analogy",
+        "emoji": "💥",
+        "question": "A specialized hazardous neutralization tank that safely disarms explosive bleach-like chemical poisons ($H_2O_2$) and turns them into harmless water ($H_2O$) and oxygen ($O_2$).",
+        "prompt": "What peroxide-neutralizing vesicle is this?",
+        "term": "Peroxisomes",
+        "subtitle": "Catalase-Mediated Detoxification"
+      },
+      {
+        "id": 42,
+        "category": "VESICLES",
+        "cardType": "definition",
+        "emoji": "💧",
+        "question": "What are membrane-bound storage sacs in eukaryotic cells that store water, nutrients, ions, pigments, or metabolic waste products?",
+        "prompt": "What cellular storage sac is this?",
+        "term": "Vacuoles",
+        "subtitle": "Membrane-Bound Cellular Storage Sacs"
+      },
+      {
+        "id": 43,
+        "category": "ENERGY ORGANELLES",
+        "cardType": "definition",
+        "emoji": "⚡",
+        "question": "What double-membrane organelle is known as the \"powerhouse of the cell\" because it generates high amounts of ATP energy through aerobic cellular respiration?",
+        "prompt": "What organelle produces ATP through aerobic respiration?",
+        "term": "Mitochondria (Singular: Mitochondrion)",
+        "subtitle": "Powerhouse of the Cell (ATP Synthesis)"
+      },
+      {
+        "id": 44,
+        "category": "ENERGY ORGANELLES",
+        "cardType": "analogy",
+        "emoji": "🏭",
+        "question": "Imagine a high-efficiency electrical power plant that burns fuel (glucose) using oxygen to continuously charge millions of universal battery packs (ATP) for the city.",
+        "prompt": "What cellular power plant is this?",
+        "term": "Mitochondria",
+        "subtitle": "The Cell's ATP Energy Generating Station"
+      },
+      {
+        "id": 45,
+        "category": "ENERGY ORGANELLES",
+        "cardType": "situational",
+        "emoji": "🏃‍♂️",
+        "question": "A marathon runner's leg muscle cells pack thousands of these organelles to continuously churn out ATP energy through oxygen-dependent aerobic respiration.",
+        "prompt": "What organelle is densely packed in high-energy muscle cells?",
+        "term": "Mitochondria",
+        "subtitle": "Abundant in High-Energy Muscle and Liver Tissues"
+      },
+      {
+        "id": 46,
+        "category": "ENERGY ORGANELLES",
+        "cardType": "structure",
+        "emoji": "〰️",
+        "question": "Inside a mitochondrion, what are the deeply folded inner membrane structures called that dramatically increase surface area for the electron transport chain and ATP synthase enzymes?",
+        "prompt": "What are the inner membrane folds of mitochondria called?",
+        "term": "Cristae (Mitochondrial Cristae)",
+        "subtitle": "Folded Inner Membrane for ATP Production"
+      },
+      {
+        "id": 47,
+        "category": "ENERGY ORGANELLES",
+        "cardType": "concept",
+        "emoji": "🔥",
+        "question": "What is the balanced biochemical equation for aerobic cellular respiration occurring inside the mitochondria?",
+        "subtext": "C6H12O6 + 6O2 ➔ 6CO2 + 6H2O + 36–38 ATP",
+        "prompt": "What is the formula for aerobic cellular respiration?",
+        "term": "C6H12O6 + 6O2 ➔ 6CO2 + 6H2O + ATP",
+        "subtitle": "Aerobic Cellular Respiration Equation"
+      },
+      {
+        "id": 48,
+        "category": "CYTOSKELETON",
+        "cardType": "definition",
+        "emoji": "🕸️",
+        "question": "What internal network of protein filaments and microtubules extends throughout the cytoplasm to maintain cell shape, anchor organelles, and facilitate intracellular transit?",
+        "prompt": "What structural internal protein network is this?",
+        "term": "Cytoskeleton",
+        "subtitle": "Internal Structural Framework and Highway System"
+      },
+      {
+        "id": 49,
+        "category": "CYTOSKELETON",
+        "cardType": "analogy",
+        "emoji": "🏗️",
+        "question": "Think of the steel scaffolding, load-bearing girders, and internal railway network inside a modern skyscraper that prevents it from collapsing and guides internal elevators.",
+        "prompt": "What structural framework is this?",
+        "term": "Cytoskeleton",
+        "subtitle": "Scaffolding and Motor Highway of the Cell"
+      },
+      {
+        "id": 50,
+        "category": "CYTOSKELETON",
+        "cardType": "structure",
+        "emoji": "📏",
+        "question": "What are the 3 major filament types making up the eukaryotic cytoskeleton from thinnest to thickest diameter?",
+        "subtext": "Microfilaments (Actin, 7nm) ➔ Intermediate Filaments (8-12nm) ➔ Microtubules (Tubulin, 25nm)",
+        "prompt": "What are the three structural fibers of the cytoskeleton?",
+        "term": "Microfilaments • Intermediate Filaments • Microtubules",
+        "subtitle": "Actin Filaments ➔ Keratin/Lamin ➔ Tubulin Microtubules"
+      },
+      {
+        "id": 51,
+        "category": "ORGANELLES",
+        "cardType": "function",
+        "emoji": "🏗️",
+        "question": "What pair of barrel-shaped microtubule structures (arranged in 9 triplets) acts as the main microtubule organizing center to separate chromosomes during cell division (mitosis)?",
+        "prompt": "What cell division structures are these?",
+        "term": "Centrosomes and Centrioles",
+        "subtitle": "Microtubule Organizing Center for Mitotic Spindle"
+      },
+      {
+        "id": 52,
+        "category": "SURFACE STRUCTURES",
+        "cardType": "structure",
+        "emoji": "🏊",
+        "question": "What are whip-like or hair-like microtubule projections (9+2 doublet arrangement) on cell surfaces that beat rhythmically to propel whole cells (sperm) or sweep mucus across airways?",
+        "prompt": "What cellular motility projections are these?",
+        "term": "Cilia and Flagella",
+        "subtitle": "Microtubule-Based Cellular Motility Projections"
+      },
+      {
+        "id": 53,
+        "category": "SURFACE STRUCTURES",
+        "cardType": "structure",
+        "emoji": "🧤",
+        "question": "What are tiny, finger-like membrane folds on the surface of intestinal epithelial cells that dramatically expand surface area to maximize nutrient absorption?",
+        "prompt": "What surface-expanding micro-folds are these?",
+        "term": "Microvilli",
+        "subtitle": "Finger-Like Folds for Maximum Surface Absorption"
       }
     ]
   }

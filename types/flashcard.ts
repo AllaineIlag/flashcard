@@ -1,14 +1,15 @@
+export type CardType = 'definition' | 'analogy' | 'situational' | 'structure' | 'function' | 'history' | 'concept';
+
 export interface Flashcard {
   id: number;
   category: string;
+  cardType?: CardType;
   emoji: string;
-  situational: string;   // Real-world situational scenario / case study
-  mainQuestion?: string;  // Guiding question (e.g. "How does the animal interact with its environment?")
-  prompt: string;        // Follow-up recall question (e.g. "What branch of zoology is this?")
-  term: string;          // Revealed term name
-  subtitle?: string;     // Secondary title or etymology
-  studies?: string[];    // Bullet points of scope / key concepts
-  takeaway: string;      // Concise key takeaway
+  question: string;       // Core question, statement, analogy, or situational scenario
+  subtext?: string;       // Optional guiding quote or context clue
+  prompt?: string;        // Optional recall question (e.g. "What is it?", "What organelle is this?")
+  term: string;           // Direct, prominent answer on flip
+  subtitle?: string;      // Optional clean subtitle or alias
 }
 
 export interface Deck {
