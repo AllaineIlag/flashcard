@@ -52,7 +52,7 @@ export const Controls: React.FC<ControlsProps> = ({
       </div>
 
       {/* Keyboard Shortcuts Legend */}
-      <div className="hidden sm:flex gap-4 justify-center flex-wrap text-[0.7rem] text-slate-400">
+      <div className="hidden sm:flex gap-3 justify-center flex-wrap text-[0.7rem] text-slate-400">
         <span>
           <kbd className="bg-white/10 border border-white/15 px-1.5 py-0.5 rounded font-mono text-slate-300 mr-1">
             Space
@@ -61,21 +61,27 @@ export const Controls: React.FC<ControlsProps> = ({
         </span>
         <span>
           <kbd className="bg-white/10 border border-white/15 px-1.5 py-0.5 rounded font-mono text-slate-300 mr-1">
-            ←
+            ← / A
           </kbd>
-          Got it (Left)
+          Got it
         </span>
         <span>
           <kbd className="bg-white/10 border border-white/15 px-1.5 py-0.5 rounded font-mono text-slate-300 mr-1">
-            →
+            → / D
           </kbd>
-          Study Again (Right)
+          Study Again
         </span>
         <span>
           <kbd className="bg-white/10 border border-white/15 px-1.5 py-0.5 rounded font-mono text-slate-300 mr-1">
-            Swipe
+            S
           </kbd>
-          Left / Right
+          Scramble / Sequence
+        </span>
+        <span>
+          <kbd className="bg-white/10 border border-white/15 px-1.5 py-0.5 rounded font-mono text-slate-300 mr-1">
+            R
+          </kbd>
+          Restart
         </span>
       </div>
     </footer>

@@ -2,20 +2,22 @@
 
 import React, { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Trophy, RotateCcw } from 'lucide-react';
+import { Trophy, Shuffle, ListOrdered } from 'lucide-react';
 
 interface VictoryModalProps {
   isOpen: boolean;
   totalRounds: number;
   totalCardsMastered: number;
-  onRestart: () => void;
+  onRestartScrambled: () => void;
+  onRestartStructured: () => void;
 }
 
 export const VictoryModal: React.FC<VictoryModalProps> = ({
   isOpen,
   totalRounds,
   totalCardsMastered,
-  onRestart,
+  onRestartScrambled,
+  onRestartStructured,
 }) => {
   useEffect(() => {
     if (isOpen) {
@@ -61,7 +63,7 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
         </h2>
 
         <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-          Congratulations! Lahat ng cards sa topic na ito ay namaster mo na gamit ang spaced repetition.
+          Congratulations! You have mastered all cards in this topic using spaced repetition. Ready for another round?
         </p>
 
         {/* Stats Grid */}
@@ -94,14 +96,26 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
           </div>
         </div>
 
-        <button
-          onClick={onRestart}
-          className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 active:scale-98 shadow-[0_6px_25px_rgba(16,185,129,0.4)] transition cursor-pointer"
-        >
-          <RotateCcw className="w-5 h-5" />
-          <span>Restart &amp; Review Again</span>
-        </button>
+        {/* Action Buttons: Scrambled vs Structured */}
+        <div className="w-full flex flex-col gap-2.5">
+          <button
+            onClick={onRestartScrambled}
+            className="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 active:scale-98 shadow-[0_4px_20px_rgba(168,85,247,0.4)] border border-purple-400/40 transition cursor-pointer"
+          >
+            <Shuffle className="w-4 h-4" />
+            <span>🔀 Scramble &amp; Challenge Again</span>
+          </button>
+
+          <button
+            onClick={onRestartStructured}
+            className="w-full flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl font-bold text-xs sm:text-sm text-slate-300 bg-white/5 hover:bg-white/10 hover:text-white border border-white/10 transition cursor-pointer"
+          >
+            <ListOrdered className="w-4 h-4 text-slate-400" />
+            <span>🔢 Review in Structured Order</span>
+          </button>
+        </div>
       </div>
     </div>
   );
 };
+

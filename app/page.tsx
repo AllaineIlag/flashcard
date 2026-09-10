@@ -13,6 +13,7 @@ import { VictoryModal } from '@/components/VictoryModal';
 import { DeckSwitcherModal } from '@/components/DeckSwitcherModal';
 import { ImportDeckModal } from '@/components/ImportDeckModal';
 import { playFlipSound, playCorrectSound, playWrongSound, playFanfareSound } from '@/lib/sound';
+import { shuffleArray } from '@/lib/shuffle';
 
 const STORAGE_KEY = 'zoology_flashcards_custom_decks';
 
@@ -24,6 +25,7 @@ export default function FlashcardApp() {
   const [reviewCards, setReviewCards] = useState<Flashcard[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentRound, setCurrentRound] = useState(1);
+  const [isShuffled, setIsShuffled] = useState(false);
   
   const [isFlipped, setIsFlipped] = useState(false);
   const [sortDirection, setSortDirection] = useState<SortDirection>(null);
@@ -137,25 +139,55 @@ export default function FlashcardApp() {
   const handleStartNextRound = () => {
     setIsRoundModalOpen(false);
     setCurrentRound(prev => prev + 1);
-    setActiveCards([...reviewCards]);
+    const nextCards = isShuffled ? shuffleArray(reviewCards) : [...reviewCards];
+    setActiveCards(nextCards);
     setReviewCards([]);
     setCurrentIndex(0);
     setIsFlipped(false);
   };
 
-  // Restart Deck
-  const handleRestart = useCallback(() => {
+  // Restart Deck (with optional force shuffle override)
+  const handleRestart = useCallback((forceShuffle?: boolean) => {
+    const shuffleMode = typeof forceShuffle === 'boolean' ? forceShuffle : isShuffled;
+    if (typeof forceShuffle === 'boolean') {
+      setIsShuffled(forceShuffle);
+    }
     setIsRoundModalOpen(false);
     setIsVictoryModalOpen(false);
     setCurrentRound(1);
-    setActiveCards([...currentDeck.cards]);
+    const initialCards = shuffleMode ? shuffleArray(currentDeck.cards) : [...currentDeck.cards];
+    setActiveCards(initialCards);
     setMasteredCards([]);
     setReviewCards([]);
     setCurrentIndex(0);
     setIsFlipped(false);
     setSortDirection(null);
     setIsAnimating(false);
-  }, [currentDeck]);
+  }, [currentDeck, isShuffled]);
+
+  // Toggle Shuffle / Structured Sequence Mode
+  const handleToggleShuffle = useCallback(() => {
+    setIsShuffled(prev => {
+      const next = !prev;
+      if (next) {
+        // Scramble remaining active cards starting from current index
+        const remaining = activeCards.slice(currentIndex);
+        const shuffled = shuffleArray(remaining);
+        setActiveCards(shuffled);
+        setCurrentIndex(0);
+        setIsFlipped(false);
+      } else {
+        // Restore structured sequence for remaining unmastered/unreviewed cards
+        const masteredSet = new Set(masteredCards.map(c => c.id));
+        const reviewSet = new Set(reviewCards.map(c => c.id));
+        const structuredRemaining = currentDeck.cards.filter(c => !masteredSet.has(c.id) && !reviewSet.has(c.id));
+        setActiveCards(structuredRemaining);
+        setCurrentIndex(0);
+        setIsFlipped(false);
+      }
+      return next;
+    });
+  }, [activeCards, currentIndex, currentDeck.cards, masteredCards, reviewCards]);
 
   // Switch Topic Deck
   const handleSelectDeck = (deck: Deck) => {
@@ -163,7 +195,8 @@ export default function FlashcardApp() {
     setIsRoundModalOpen(false);
     setIsVictoryModalOpen(false);
     setCurrentRound(1);
-    setActiveCards([...deck.cards]);
+    const initialCards = isShuffled ? shuffleArray(deck.cards) : [...deck.cards];
+    setActiveCards(initialCards);
     setMasteredCards([]);
     setReviewCards([]);
     setCurrentIndex(0);
@@ -247,6 +280,9 @@ export default function FlashcardApp() {
       } else if (e.code === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
         e.preventDefault();
         handleWrong();
+      } else if (e.key === 's' || e.key === 'S') {
+        e.preventDefault();
+        handleToggleShuffle();
       } else if (e.key === 'r' || e.key === 'R') {
         if (window.confirm('Restart and review from Round 1?')) {
           handleRestart();
@@ -264,6 +300,7 @@ export default function FlashcardApp() {
     handleFlip,
     handleCorrect,
     handleWrong,
+    handleToggleShuffle,
     handleRestart,
   ]);
 
@@ -286,7 +323,9 @@ export default function FlashcardApp() {
           masteredCount={masteredCards.length}
           totalDeckCards={currentDeck.cards.length}
           soundEnabled={soundEnabled}
+          isShuffled={isShuffled}
           onToggleSound={toggleSound}
+          onToggleShuffle={handleToggleShuffle}
           onRestartDeck={() => {
             if (window.confirm('Restart and review from Round 1?')) {
               handleRestart();
@@ -358,7 +397,8 @@ export default function FlashcardApp() {
         isOpen={isVictoryModalOpen}
         totalRounds={currentRound}
         totalCardsMastered={masteredCards.length}
-        onRestart={handleRestart}
+        onRestartScrambled={() => handleRestart(true)}
+        onRestartStructured={() => handleRestart(false)}
       />
 
       <DeckSwitcherModal
