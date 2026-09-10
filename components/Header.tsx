@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Volume2, VolumeX, RotateCcw, BookOpen } from 'lucide-react';
+import { Volume2, VolumeX, RotateCcw, BookOpen, Sparkles, ChevronDown } from 'lucide-react';
 import { Deck } from '@/types/flashcard';
 
 interface HeaderProps {
@@ -15,6 +15,7 @@ interface HeaderProps {
   onToggleSound: () => void;
   onRestartDeck: () => void;
   onOpenDeckSwitcher: () => void;
+  onOpenImportModal: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -28,46 +29,68 @@ export const Header: React.FC<HeaderProps> = ({
   onToggleSound,
   onRestartDeck,
   onOpenDeckSwitcher,
+  onOpenImportModal,
 }) => {
   const masteryPct = totalDeckCards > 0 ? Math.round((masteredCount / totalDeckCards) * 100) : 0;
   const roundProgressPct = totalRoundCards > 0 ? (currentCardNum / totalRoundCards) * 100 : 0;
 
   return (
-    <header className="w-full flex flex-col gap-3.5 bg-[rgba(20,27,48,0.8)] backdrop-blur-xl border border-[rgba(255,255,255,0.12)] rounded-2xl p-3.5 sm:p-5 shadow-2xl">
+    <header className="w-full flex flex-col gap-3.5 bg-slate-900/90 backdrop-blur-xl border border-white/15 rounded-2xl p-4 sm:p-5 shadow-2xl">
       {/* Top row */}
-      <div className="flex justify-between items-center gap-3">
-        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+      <div className="flex justify-between items-center gap-3 flex-wrap sm:flex-nowrap">
+        
+        {/* Left: Active Topic Selector & Switcher */}
+        <div className="flex items-center gap-2.5">
           <button
             onClick={onOpenDeckSwitcher}
-            className="flex items-center gap-1.5 font-mono text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 px-2.5 py-1 rounded-full hover:bg-indigo-500/30 transition cursor-pointer"
-            title="Switch Deck / Topic"
+            className="flex items-center gap-2 bg-indigo-600/25 hover:bg-indigo-600/40 text-indigo-200 border border-indigo-500/50 hover:border-indigo-400 px-3 py-1.5 rounded-xl transition cursor-pointer group shadow-sm"
+            title="Click to switch topic"
           >
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>{currentDeck.badge}</span>
+            <span className="text-lg">{currentDeck.icon}</span>
+            <div className="text-left">
+              <span className="font-mono text-[0.65rem] font-bold uppercase tracking-wider text-indigo-300 block">
+                {currentDeck.badge}
+              </span>
+              <span className="text-xs sm:text-sm font-bold text-white group-hover:text-indigo-100 transition line-clamp-1">
+                {currentDeck.title}
+              </span>
+            </div>
+            <ChevronDown className="w-4 h-4 text-indigo-400 group-hover:translate-y-0.5 transition-transform shrink-0 ml-1" />
           </button>
-          
-          <h1 className="text-sm sm:text-lg font-bold text-white tracking-tight line-clamp-1">
-            {currentDeck.title}
-          </h1>
         </div>
 
-        {/* Header Actions */}
-        <div className="flex items-center gap-2">
-          <div className="font-mono text-xs font-bold text-indigo-200 bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-lg">
+        {/* Right: Header Actions (AI Prompt, Round, Sound, Restart) */}
+        <div className="flex items-center gap-2 shrink-0 ml-auto">
+          
+          {/* AI Prompt / Import Button */}
+          <button
+            onClick={onOpenImportModal}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-amber-500/20 to-indigo-500/20 hover:from-amber-500/30 hover:to-indigo-500/30 text-amber-300 border border-amber-500/40 hover:border-amber-400 font-bold text-xs rounded-xl transition cursor-pointer shadow-sm"
+            title="Open AI Prompt generator and JSON deck manager"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <span className="hidden sm:inline">AI Prompt / Import</span>
+            <span className="sm:hidden">Prompt</span>
+          </button>
+
+          {/* Round Indicator */}
+          <div className="font-mono text-xs font-bold text-indigo-200 bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-xl">
             Round <span className="text-white">{currentRound}</span>
           </div>
 
+          {/* Sound Toggle */}
           <button
             onClick={onToggleSound}
-            className="p-1.5 text-slate-300 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:text-white transition cursor-pointer"
+            className="p-2 text-slate-300 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:text-white transition cursor-pointer"
             title={soundEnabled ? 'Mute Sound' : 'Enable Sound'}
           >
             {soundEnabled ? <Volume2 className="w-4 h-4 text-emerald-400" /> : <VolumeX className="w-4 h-4 text-rose-400" />}
           </button>
 
+          {/* Restart Deck */}
           <button
             onClick={onRestartDeck}
-            className="p-1.5 text-slate-300 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:text-white transition cursor-pointer"
+            className="p-2 text-slate-300 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:text-white transition cursor-pointer"
             title="Restart Full Deck"
           >
             <RotateCcw className="w-4 h-4" />
@@ -75,19 +98,20 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Progress Bar */}
+      {/* Progress Bar & Counters */}
       <div className="flex flex-col gap-1.5">
-        <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-indigo-500 to-emerald-400 rounded-full transition-all duration-300 ease-out"
+            className="h-full bg-gradient-to-r from-indigo-500 via-teal-400 to-emerald-400 rounded-full transition-all duration-300 ease-out"
             style={{ width: `${roundProgressPct}%` }}
           />
         </div>
         <div className="flex justify-between text-[0.72rem] font-mono text-slate-400">
-          <span>Card {currentCardNum} of {totalRoundCards}</span>
-          <span className="text-emerald-400 font-semibold">{masteryPct}% Mastered</span>
+          <span>Card {currentCardNum} of {totalRoundCards} (Deck Total: {totalDeckCards})</span>
+          <span className="text-emerald-400 font-bold">{masteredCount} Mastered ({masteryPct}%)</span>
         </div>
       </div>
     </header>
   );
 };
+
